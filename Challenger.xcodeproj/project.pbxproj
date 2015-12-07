@@ -14,6 +14,13 @@
 		3C3A5CE51C0D8383003B94A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C3A5CE31C0D8383003B94A3 /* LaunchScreen.storyboard */; };
 		3C3A5CF01C0D8383003B94A3 /* ChallengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A5CEF1C0D8383003B94A3 /* ChallengerTests.swift */; };
 		3C3A5CFB1C0D8383003B94A3 /* ChallengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A5CFA1C0D8383003B94A3 /* ChallengerUITests.swift */; };
+		3CD134B21C0D8DF30096B3DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134B11C0D8DF30096B3DB /* AVFoundation.framework */; };
+		3CD134B41C0D8DFC0096B3DB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134B31C0D8DFC0096B3DB /* QuartzCore.framework */; };
+		3CD134B61C0D8E060096B3DB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134B51C0D8E060096B3DB /* CoreMedia.framework */; };
+		3CD134B81C0D8E0F0096B3DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134B71C0D8E0F0096B3DB /* UIKit.framework */; };
+		3CD134BA1C0D8E1E0096B3DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134B91C0D8E1E0096B3DB /* Foundation.framework */; };
+		3CD134BC1C0D8E250096B3DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134BB1C0D8E250096B3DB /* CoreGraphics.framework */; };
+		4E1EAA9A30E521AD1838C2C1 /* Pods_Challenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4108CC9062F8423B14D951A4 /* Pods_Challenger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19C8AFC1E5E1C2829992412B /* Pods-Challenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.debug.xcconfig"; sourceTree = "<group>"; };
 		3C3A5CD71C0D8383003B94A3 /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3A5CDA1C0D8383003B94A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C3A5CDC1C0D8383003B94A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,15 @@
 		3C3A5CF61C0D8383003B94A3 /* ChallengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3A5CFA1C0D8383003B94A3 /* ChallengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengerUITests.swift; sourceTree = "<group>"; };
 		3C3A5CFC1C0D8383003B94A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CD134AD1C0D89420096B3DB /* Challenger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Challenger-Bridging-Header.h"; sourceTree = "<group>"; };
+		3CD134B11C0D8DF30096B3DB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3CD134B31C0D8DFC0096B3DB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3CD134B51C0D8E060096B3DB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3CD134B71C0D8E0F0096B3DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3CD134B91C0D8E1E0096B3DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3CD134BB1C0D8E250096B3DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4108CC9062F8423B14D951A4 /* Pods_Challenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		481269CC007C59179F89EBCD /* Pods-Challenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CD134BC1C0D8E250096B3DB /* CoreGraphics.framework in Frameworks */,
+				3CD134BA1C0D8E1E0096B3DB /* Foundation.framework in Frameworks */,
+				3CD134B21C0D8DF30096B3DB /* AVFoundation.framework in Frameworks */,
+				3CD134B81C0D8E0F0096B3DB /* UIKit.framework in Frameworks */,
+				3CD134B61C0D8E060096B3DB /* CoreMedia.framework in Frameworks */,
+				3CD134B41C0D8DFC0096B3DB /* QuartzCore.framework in Frameworks */,
+				4E1EAA9A30E521AD1838C2C1 /* Pods_Challenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +98,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03A28CB192AE64492541F7C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CD134BB1C0D8E250096B3DB /* CoreGraphics.framework */,
+				3CD134B91C0D8E1E0096B3DB /* Foundation.framework */,
+				3CD134B71C0D8E0F0096B3DB /* UIKit.framework */,
+				3CD134B51C0D8E060096B3DB /* CoreMedia.framework */,
+				3CD134B31C0D8DFC0096B3DB /* QuartzCore.framework */,
+				3CD134B11C0D8DF30096B3DB /* AVFoundation.framework */,
+				4108CC9062F8423B14D951A4 /* Pods_Challenger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C3A5CCE1C0D8383003B94A3 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				3C3A5CEE1C0D8383003B94A3 /* ChallengerTests */,
 				3C3A5CF91C0D8383003B94A3 /* ChallengerUITests */,
 				3C3A5CD81C0D8383003B94A3 /* Products */,
+				932D09DA967A6233452E0C94 /* Pods */,
+				03A28CB192AE64492541F7C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +143,7 @@
 				3C3A5CE11C0D8383003B94A3 /* Assets.xcassets */,
 				3C3A5CE31C0D8383003B94A3 /* LaunchScreen.storyboard */,
 				3C3A5CE61C0D8383003B94A3 /* Info.plist */,
+				3CD134AD1C0D89420096B3DB /* Challenger-Bridging-Header.h */,
 			);
 			path = Challenger;
 			sourceTree = "<group>";
@@ -125,6 +166,15 @@
 			path = ChallengerUITests;
 			sourceTree = "<group>";
 		};
+		932D09DA967A6233452E0C94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19C8AFC1E5E1C2829992412B /* Pods-Challenger.debug.xcconfig */,
+				481269CC007C59179F89EBCD /* Pods-Challenger.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C3A5CFF1C0D8383003B94A3 /* Build configuration list for PBXNativeTarget "Challenger" */;
 			buildPhases = (
+				A7D5E51C3FCCCAC6216317C2 /* Check Pods Manifest.lock */,
 				3C3A5CD31C0D8383003B94A3 /* Sources */,
 				3C3A5CD41C0D8383003B94A3 /* Frameworks */,
 				3C3A5CD51C0D8383003B94A3 /* Resources */,
+				3A7EA30BF07B2FC61E1FA9C2 /* Embed Pods Frameworks */,
+				AEF68B13123FD01268E280A6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +303,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A7EA30BF07B2FC61E1FA9C2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Challenger/Pods-Challenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7D5E51C3FCCCAC6216317C2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AEF68B13123FD01268E280A6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Challenger/Pods-Challenger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C3A5CD31C0D8383003B94A3 /* Sources */ = {
@@ -395,23 +496,30 @@
 		};
 		3C3A5D001C0D8383003B94A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19C8AFC1E5E1C2829992412B /* Pods-Challenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Challenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asia.sk8.Challenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Challenger/Challenger-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3C3A5D011C0D8383003B94A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 481269CC007C59179F89EBCD /* Pods-Challenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Challenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asia.sk8.Challenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Challenger/Challenger-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -482,6 +590,7 @@
 				3C3A5D011C0D8383003B94A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C3A5D021C0D8383003B94A3 /* Build configuration list for PBXNativeTarget "ChallengerTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +599,7 @@
 				3C3A5D041C0D8383003B94A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C3A5D051C0D8383003B94A3 /* Build configuration list for PBXNativeTarget "ChallengerUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +608,7 @@
 				3C3A5D071C0D8383003B94A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
