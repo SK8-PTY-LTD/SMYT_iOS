@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3C2708A61C18071500AEA868 /* CL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2708A41C18071500AEA868 /* CL.swift */; };
 		3C2708A71C18071500AEA868 /* CLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2708A51C18071500AEA868 /* CLUser.swift */; };
-		3C282B3A1C200F40004105E6 /* Screen Shot 2015-12-15 at 8.04.28 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C282B391C200F40004105E6 /* Screen Shot 2015-12-15 at 8.04.28 PM.png */; };
-		3C282B3C1C200FD5004105E6 /* IMG_0164.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 3C282B3B1C200FD5004105E6 /* IMG_0164.JPG */; };
 		3C282B3E1C201179004105E6 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C282B3D1C201179004105E6 /* NotificationTableViewController.swift */; };
 		3C282B401C2015A2004105E6 /* ChallengeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C282B3F1C2015A2004105E6 /* ChallengeListTableViewController.swift */; };
 		3C3A5CDB1C0D8383003B94A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A5CDA1C0D8383003B94A3 /* AppDelegate.swift */; };
@@ -19,6 +17,9 @@
 		3C3A5CE51C0D8383003B94A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C3A5CE31C0D8383003B94A3 /* LaunchScreen.storyboard */; };
 		3C3A5CF01C0D8383003B94A3 /* ChallengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A5CEF1C0D8383003B94A3 /* ChallengerTests.swift */; };
 		3C3A5CFB1C0D8383003B94A3 /* ChallengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A5CFA1C0D8383003B94A3 /* ChallengerUITests.swift */; };
+		3C469C871C2479DE00411B84 /* CLVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C469C861C2479DE00411B84 /* CLVideo.swift */; };
+		3C469C891C247ABB00411B84 /* CLComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C469C881C247ABB00411B84 /* CLComment.swift */; };
+		3C469C8D1C247C9C00411B84 /* CLChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C469C8C1C247C9C00411B84 /* CLChallenge.swift */; };
 		3CC7496B1C1F8A610063A928 /* AVImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC7496A1C1F8A610063A928 /* AVImageView.swift */; };
 		3CC749741C1FDB450063A928 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC7496E1C1FDB450063A928 /* Bolts.framework */; };
 		3CC749751C1FDB450063A928 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC7496F1C1FDB450063A928 /* FBSDKCoreKit.framework */; };
@@ -62,8 +63,6 @@
 		19C8AFC1E5E1C2829992412B /* Pods-Challenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.debug.xcconfig"; sourceTree = "<group>"; };
 		3C2708A41C18071500AEA868 /* CL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CL.swift; sourceTree = "<group>"; };
 		3C2708A51C18071500AEA868 /* CLUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLUser.swift; sourceTree = "<group>"; };
-		3C282B391C200F40004105E6 /* Screen Shot 2015-12-15 at 8.04.28 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2015-12-15 at 8.04.28 PM.png"; sourceTree = "<group>"; };
-		3C282B3B1C200FD5004105E6 /* IMG_0164.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0164.JPG; sourceTree = "<group>"; };
 		3C282B3D1C201179004105E6 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		3C282B3F1C2015A2004105E6 /* ChallengeListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeListTableViewController.swift; sourceTree = "<group>"; };
 		3C3A5CD71C0D8383003B94A3 /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +77,9 @@
 		3C3A5CF61C0D8383003B94A3 /* ChallengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3A5CFA1C0D8383003B94A3 /* ChallengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengerUITests.swift; sourceTree = "<group>"; };
 		3C3A5CFC1C0D8383003B94A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C469C861C2479DE00411B84 /* CLVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLVideo.swift; sourceTree = "<group>"; };
+		3C469C881C247ABB00411B84 /* CLComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLComment.swift; sourceTree = "<group>"; };
+		3C469C8C1C247C9C00411B84 /* CLChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLChallenge.swift; sourceTree = "<group>"; };
 		3CC7496A1C1F8A610063A928 /* AVImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVImageView.swift; sourceTree = "<group>"; };
 		3CC7496E1C1FDB450063A928 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
 		3CC7496F1C1FDB450063A928 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
@@ -164,7 +166,10 @@
 			isa = PBXGroup;
 			children = (
 				3C2708A41C18071500AEA868 /* CL.swift */,
+				3C469C8C1C247C9C00411B84 /* CLChallenge.swift */,
 				3C2708A51C18071500AEA868 /* CLUser.swift */,
+				3C469C861C2479DE00411B84 /* CLVideo.swift */,
+				3C469C881C247ABB00411B84 /* CLComment.swift */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -203,8 +208,6 @@
 				3C3A5CE31C0D8383003B94A3 /* LaunchScreen.storyboard */,
 				3C3A5CE61C0D8383003B94A3 /* Info.plist */,
 				3CD134AD1C0D89420096B3DB /* Challenger-Bridging-Header.h */,
-				3C282B391C200F40004105E6 /* Screen Shot 2015-12-15 at 8.04.28 PM.png */,
-				3C282B3B1C200FD5004105E6 /* IMG_0164.JPG */,
 			);
 			path = Challenger;
 			sourceTree = "<group>";
@@ -367,10 +370,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C282B3A1C200F40004105E6 /* Screen Shot 2015-12-15 at 8.04.28 PM.png in Resources */,
 				3C3A5CE51C0D8383003B94A3 /* LaunchScreen.storyboard in Resources */,
 				3C3A5CE21C0D8383003B94A3 /* Assets.xcassets in Resources */,
-				3C282B3C1C200FD5004105E6 /* IMG_0164.JPG in Resources */,
 				3C3A5CE01C0D8383003B94A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,9 +446,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC749961C1FF6940063A928 /* LoginViewController.swift in Sources */,
+				3C469C8D1C247C9C00411B84 /* CLChallenge.swift in Sources */,
 				3CC749951C1FF6940063A928 /* LandingViewController.swift in Sources */,
+				3C469C891C247ABB00411B84 /* CLComment.swift in Sources */,
 				3CC7499A1C1FF6940063A928 /* VideoEditViewController.swift in Sources */,
 				3C282B401C2015A2004105E6 /* ChallengeListTableViewController.swift in Sources */,
+				3C469C871C2479DE00411B84 /* CLVideo.swift in Sources */,
 				3CC749991C1FF6940063A928 /* VideoCaptureViewController.swift in Sources */,
 				3CC7496B1C1F8A610063A928 /* AVImageView.swift in Sources */,
 				3C2708A71C18071500AEA868 /* CLUser.swift in Sources */,
@@ -596,6 +600,7 @@
 			baseConfigurationReference = 19C8AFC1E5E1C2829992412B /* Pods-Challenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -620,6 +625,7 @@
 			baseConfigurationReference = 481269CC007C59179F89EBCD /* Pods-Challenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

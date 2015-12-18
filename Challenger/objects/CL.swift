@@ -121,15 +121,23 @@ class CL: NSObject {
         
         //When app starts, set up AV
         
+        //Reggister Subclass
         CLUser.registerSubclass();
-        AVOSCloud.setApplicationId("UjFi1SbKQAXpNaGqOjtGalDR", clientKey: "G0OGS5h97g7IdvoID70izkFX");
+        CLChallenge.registerSubclass();
+        CLVideo.registerSubclass();
+        CLComment.registerSubclass();
+        
+        //Initialization connection with Server
+        AVOSCloud.useAVCloudUS();
+        AVOSCloud.setApplicationId("pEDLbnxPOEzJHCrBXH1R1W9I-gzGzoHsz", clientKey: "bbU7nwbR3DFPVzTA9WWSCEvP");
         AVAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
         
         CLUser.enableAutomaticUser();
         
         if let user = CLUser.currentUser() {
             CL.currentUser = user as CLUser;
-            NSLog("User exists");
+            CL.currentUser.saveInBackground();
+            NSLog("User exists \(user)");
         } else {
             AVAnonymousUtils .logInWithBlock({ (anonymousUser, error) -> Void in
                 if let _ = error {
