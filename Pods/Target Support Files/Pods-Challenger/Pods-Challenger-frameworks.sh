@@ -82,3 +82,20 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Challenger/Bolts.framework"
+  install_framework "Pods-Challenger/FBSDKCoreKit.framework"
+  install_framework "Pods-Challenger/FBSDKLoginKit.framework"
+  install_framework "Pods-Challenger/ICGVideoTrimmer.framework"
+  install_framework "Pods-Challenger/ICViewPager.framework"
+  install_framework "Pods-Challenger/TPKeyboardAvoiding.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Challenger/Bolts.framework"
+  install_framework "Pods-Challenger/FBSDKCoreKit.framework"
+  install_framework "Pods-Challenger/FBSDKLoginKit.framework"
+  install_framework "Pods-Challenger/ICGVideoTrimmer.framework"
+  install_framework "Pods-Challenger/ICViewPager.framework"
+  install_framework "Pods-Challenger/TPKeyboardAvoiding.framework"
+fi

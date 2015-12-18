@@ -1,10 +1,41 @@
 PODS:
-  - AVOSCloud (3.1.6.7)
+  - AVOSCloud (3.1.6.8)
+  - Bolts (1.5.0):
+    - Bolts/AppLinks (= 1.5.0)
+    - Bolts/Tasks (= 1.5.0)
+  - Bolts/AppLinks (1.5.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.5.0)
+  - FBSDKCoreKit (4.8.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.8.0)
+    - FBSDKCoreKit/no-arc (= 4.8.0)
+  - FBSDKCoreKit/arc (4.8.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.8.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.8.0):
+    - FBSDKCoreKit
+  - ICGVideoTrimmer (1.1)
+  - ICViewPager (1.5.1)
+  - TPKeyboardAvoiding (1.2.11)
 
 DEPENDENCIES:
   - AVOSCloud
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - ICGVideoTrimmer
+  - ICViewPager
+  - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
-  AVOSCloud: 7af6267747894eadfd14560db08ea99a51b57fc0
+  AVOSCloud: 4b06ec4444ca0ee0543e6cf729b11e5f3f956977
+  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
+  FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
+  ICGVideoTrimmer: 1f54de0595af56af2a406f20cdb33c1c440d15cd
+  ICViewPager: 032dc71a50fe898e185fae6112ded4bed0e0523c
+  TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
 
 COCOAPODS: 0.39.0

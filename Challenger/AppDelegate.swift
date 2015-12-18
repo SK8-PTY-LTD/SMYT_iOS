@@ -18,8 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Initialize AVOSCloud
-        AVOSCloud.setApplicationId("UjFi1SbKQAXpNaGqOjtGalDR", clientKey: "G0OGS5h97g7IdvoID70izkFX");
-        AVAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
+        CL.initialize(launchOptions);
         
         return true
     }
