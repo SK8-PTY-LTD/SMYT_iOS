@@ -132,11 +132,8 @@ class CL: NSObject {
         AVOSCloud.setApplicationId("pEDLbnxPOEzJHCrBXH1R1W9I-gzGzoHsz", clientKey: "bbU7nwbR3DFPVzTA9WWSCEvP");
         AVAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
         
-        CLUser.enableAutomaticUser();
-        
         if let user = CLUser.currentUser() {
             CL.currentUser = user as CLUser;
-            CL.currentUser.saveInBackground();
             NSLog("User exists \(user)");
         } else {
             AVAnonymousUtils .logInWithBlock({ (anonymousUser, error) -> Void in

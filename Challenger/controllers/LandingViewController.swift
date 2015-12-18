@@ -90,7 +90,6 @@ class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
                             CL.currentUser.email = email;
                             CL.currentUser.password = id;
                             CL.currentUser.profileName = name;
-                            CL.currentUser.gender = gender;
                             CL.currentUser.signUpInBackgroundWithBlock({ (success, e) -> Void in
                                 let urlString: String = "https://graph.facebook.com/" + id + "/picture?type=normal";
                                 let data = NSData(contentsOfURL: NSURL(string: urlString)!);

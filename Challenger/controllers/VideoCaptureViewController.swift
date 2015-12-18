@@ -12,6 +12,8 @@ import AssetsLibrary
 
 class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
+    var challenge: CLChallenge!;
+    
     var captureVideoPreviewLayer : AVCaptureVideoPreviewLayer!
     var session : AVCaptureSession!
     var movieFileOutput : AVCaptureMovieFileOutput!

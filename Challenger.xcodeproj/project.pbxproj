@@ -11,6 +11,8 @@
 		3C2708A71C18071500AEA868 /* CLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2708A51C18071500AEA868 /* CLUser.swift */; };
 		3C282B3E1C201179004105E6 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C282B3D1C201179004105E6 /* NotificationTableViewController.swift */; };
 		3C282B401C2015A2004105E6 /* ChallengeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C282B3F1C2015A2004105E6 /* ChallengeListTableViewController.swift */; };
+		3C3A07AD1C24B0F5007DF325 /* HomeVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A07AC1C24B0F5007DF325 /* HomeVideoTableViewCell.swift */; };
+		3C3A07AF1C24B550007DF325 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A07AE1C24B550007DF325 /* ChallengeDetailViewController.swift */; };
 		3C3A5CDB1C0D8383003B94A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A5CDA1C0D8383003B94A3 /* AppDelegate.swift */; };
 		3C3A5CE01C0D8383003B94A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C3A5CDE1C0D8383003B94A3 /* Main.storyboard */; };
 		3C3A5CE21C0D8383003B94A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C3A5CE11C0D8383003B94A3 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		3C2708A51C18071500AEA868 /* CLUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLUser.swift; sourceTree = "<group>"; };
 		3C282B3D1C201179004105E6 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		3C282B3F1C2015A2004105E6 /* ChallengeListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeListTableViewController.swift; sourceTree = "<group>"; };
+		3C3A07AC1C24B0F5007DF325 /* HomeVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVideoTableViewCell.swift; sourceTree = "<group>"; };
+		3C3A07AE1C24B550007DF325 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
 		3C3A5CD71C0D8383003B94A3 /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3A5CDA1C0D8383003B94A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C3A5CDF1C0D8383003B94A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				3CC7496A1C1F8A610063A928 /* AVImageView.swift */,
+				3C3A07AC1C24B0F5007DF325 /* HomeVideoTableViewCell.swift */,
 			);
 			name = views;
 			path = Challenger/views;
@@ -246,10 +251,11 @@
 				3CC749901C1FF6940063A928 /* LoginViewController.swift */,
 				3CC749911C1FF6940063A928 /* SignupViewController.swift */,
 				3CC749921C1FF6940063A928 /* TabViewController.swift */,
-				3CC749931C1FF6940063A928 /* VideoCaptureViewController.swift */,
-				3CC749941C1FF6940063A928 /* VideoEditViewController.swift */,
 				3C282B3D1C201179004105E6 /* NotificationTableViewController.swift */,
 				3C282B3F1C2015A2004105E6 /* ChallengeListTableViewController.swift */,
+				3C3A07AE1C24B550007DF325 /* ChallengeDetailViewController.swift */,
+				3CC749931C1FF6940063A928 /* VideoCaptureViewController.swift */,
+				3CC749941C1FF6940063A928 /* VideoEditViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -451,10 +457,12 @@
 				3C469C891C247ABB00411B84 /* CLComment.swift in Sources */,
 				3CC7499A1C1FF6940063A928 /* VideoEditViewController.swift in Sources */,
 				3C282B401C2015A2004105E6 /* ChallengeListTableViewController.swift in Sources */,
+				3C3A07AF1C24B550007DF325 /* ChallengeDetailViewController.swift in Sources */,
 				3C469C871C2479DE00411B84 /* CLVideo.swift in Sources */,
 				3CC749991C1FF6940063A928 /* VideoCaptureViewController.swift in Sources */,
 				3CC7496B1C1F8A610063A928 /* AVImageView.swift in Sources */,
 				3C2708A71C18071500AEA868 /* CLUser.swift in Sources */,
+				3C3A07AD1C24B0F5007DF325 /* HomeVideoTableViewCell.swift in Sources */,
 				3C282B3E1C201179004105E6 /* NotificationTableViewController.swift in Sources */,
 				3CC749971C1FF6940063A928 /* SignupViewController.swift in Sources */,
 				3C3A5CDB1C0D8383003B94A3 /* AppDelegate.swift in Sources */,

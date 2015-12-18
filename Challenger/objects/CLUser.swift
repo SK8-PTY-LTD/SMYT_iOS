@@ -249,7 +249,6 @@ public class CLUser : AVUser {
     @NSManaged var bio: String?
     @NSManaged var balance: Int
     @NSManaged var emailVerified: NSNumber
-    @NSManaged var gender: NSNumber
     @NSManaged var installationId: String?
     @NSManaged var location: AVGeoPoint?
     @NSManaged var locationString: String?
@@ -258,6 +257,7 @@ public class CLUser : AVUser {
     @NSManaged var profileName: String?
     @NSManaged var realName: String?
     @NSManaged var url: String?
+    @NSManaged var level: String?
     
 //    var address: SHAddress? {
 //        get {

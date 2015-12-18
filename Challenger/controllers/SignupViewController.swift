@@ -48,8 +48,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate, UIActionSheet
         CL.currentUser.email = email;
         CL.currentUser.password = passWord;
         CL.currentUser.setObject(username, forKey: "profileName");
-        
-        CL.currentUser.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
+        CL.currentUser.saveInBackgroundWithBlock { (success, error) -> Void in
             if let e = error {
                 CL.showError(e);
             } else {
