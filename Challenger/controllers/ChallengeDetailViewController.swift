@@ -11,6 +11,7 @@ import Foundation
 class ChallengeDetailViewController: UIViewController {
     
     var challenge: CLChallenge!;
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var instructionTextView: UITextView!
     @IBOutlet weak var requirementTextView: UITextView!
@@ -18,13 +19,13 @@ class ChallengeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        self.title = "CHALLENGE \(self.challenge.serial)";
+        self.navigationBar.items![0].title = "CHALLENGE \(self.challenge.serial)";
         self.titleLabel.text = self.challenge.name;
         self.instructionTextView.text = self.challenge.instruction;
         self.requirementTextView.text = self.challenge.requirement;
     }
     
-    @IBAction func closeButtonClicked(sender: UIBarButtonItem) {
+    @IBAction func closeButtonClicked(sender: UIButton) {
         self.dismissViewControllerAnimated(true) { () -> Void in
             
         }

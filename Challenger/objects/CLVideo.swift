@@ -74,7 +74,8 @@ public class CLVideo : AVObject, AVSubclassing {
     @NSManaged public dynamic var status: Int;
     @NSManaged public dynamic var summary: String?;
     @NSManaged public dynamic var numberOfVerifyRequired: Int
-
+    @NSManaged public dynamic var isSuccessVideo: Bool
+    
     //Do not remove coverImage codes, might be useful in the future
 //    private var cachedCoverUIImage: UIImage!
 //    public dynamic var coverUIImage: UIImage? {

@@ -29,7 +29,8 @@ class ChallengeListTableViewController: UIViewController, UITableViewDelegate, U
             }
         }
     }
-    @IBAction func closeButtonClicked(sender: UIBarButtonItem) {
+    
+    @IBAction func closeButtonClicked(sender: UIButton) {
         self.dismissViewControllerAnimated(true) { () -> Void in
             
         }

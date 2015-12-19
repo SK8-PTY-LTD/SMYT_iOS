@@ -28,7 +28,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="EDIT CLIP" id="odz-g2-C7d">
-                                        <barButtonItem key="rightBarButtonItem" image="camera-close" id="xHL-ap-iLd">
+                                        <barButtonItem key="leftBarButtonItem" image="camera-close" id="xHL-ap-iLd">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="closeButtonClicked:" destination="Xs6-Oa-N0f" id="bEd-2D-ycT"/>
@@ -37,15 +37,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oU5-bM-lsh" customClass="ICGVideoTrimmerView">
-                                <rect key="frame" x="40" y="664" width="520" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oU5-bM-lsh" customClass="ICGVideoTrimmerView">
+                                <rect key="frame" x="0.0" y="664" width="600" height="60"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="c4J-l4-IfX"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="420" width="400" height="60"/>
-                                </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tv-2d-lwk">
                                 <rect key="frame" x="67" y="732" width="220" height="30"/>
@@ -70,7 +67,7 @@
                                     <action selector="successButtonClicked:" destination="Xs6-Oa-N0f" eventType="touchUpInside" id="faV-Qw-u1d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-JO-9R8">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-JO-9R8">
                                 <rect key="frame" x="313" y="732" width="220" height="30"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="FAIL">
@@ -80,8 +77,8 @@
                                     <action selector="failButtonClicked:" destination="Xs6-Oa-N0f" eventType="touchUpInside" id="ksm-mW-OXv"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgO-jB-UKv" customClass="AVImageView" customModule="Challenger" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SgO-jB-UKv" customClass="AVImageView" customModule="Challenger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SgO-jB-UKv" secondAttribute="height" id="cBe-L4-daJ"/>
                                 </constraints>
@@ -124,13 +121,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="failButton" destination="PTp-JO-9R8" id="Qz4-bb-IpO"/>
+                        <outlet property="successButton" destination="9tv-2d-lwk" id="wEA-pR-MCE"/>
                         <outlet property="thumbnailImageView" destination="SgO-jB-UKv" id="kib-R7-Ix2"/>
                         <outlet property="trimmerView" destination="oU5-bM-lsh" id="iiG-lS-MNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VP-Zo-QmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3405" y="1030.5"/>
+            <point key="canvasLocation" x="-2405" y="1022"/>
         </scene>
         <!--Video Capture View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -144,48 +143,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1e-GK-Q5p">
-                                <rect key="frame" x="0.0" y="480" width="600" height="120"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozH-kK-9SQ">
-                                        <rect key="frame" x="264" y="23" width="72" height="73"/>
-                                        <state key="normal" image="camera-button">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="takeVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9A7-zn-ZpC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.28235294117647058" green="0.6588235294117647" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="4cx-lu-dHp"/>
-                                    <constraint firstAttribute="centerX" secondItem="ozH-kK-9SQ" secondAttribute="centerX" id="N8v-8X-hYd"/>
-                                    <constraint firstAttribute="centerY" secondItem="ozH-kK-9SQ" secondAttribute="centerY" id="zkL-bN-uFo"/>
-                                </constraints>
-                            </view>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYR-Sz-Xkl">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-4Q-zjK">
-                                        <rect key="frame" x="288" y="18" width="23" height="24"/>
-                                        <state key="normal" backgroundImage="camera-flip">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oH4-km-cOG">
-                                        <rect key="frame" x="16" y="17" width="24" height="25"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-4Q-zjK">
+                                        <rect key="frame" x="289" y="18" width="23" height="24"/>
                                         <state key="normal" backgroundImage="flash-off">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="flashButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bhm-Jq-BQQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13z-qH-aQp">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13z-qH-aQp">
                                         <rect key="frame" x="560" y="18" width="24" height="24"/>
+                                        <state key="normal" backgroundImage="camera-flip">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flipButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SJY-hb-FQc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oH4-km-cOG">
+                                        <rect key="frame" x="16" y="18" width="24" height="25"/>
                                         <state key="normal" backgroundImage="camera-close">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="closeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F6E-zX-NwV"/>
+                                            <action selector="closeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wAj-oT-ing"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -198,6 +183,41 @@
                                     <constraint firstAttribute="centerY" secondItem="5CM-4Q-zjK" secondAttribute="centerY" id="S5b-03-waH"/>
                                     <constraint firstAttribute="centerX" secondItem="5CM-4Q-zjK" secondAttribute="centerX" id="lsk-3E-ebY"/>
                                     <constraint firstAttribute="centerY" secondItem="oH4-km-cOG" secondAttribute="centerY" id="uDT-S2-CvD"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1e-GK-Q5p">
+                                <rect key="frame" x="0.0" y="480" width="600" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozH-kK-9SQ">
+                                        <rect key="frame" x="264" y="24" width="72" height="73"/>
+                                        <state key="normal" image="camera-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takeVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9A7-zn-ZpC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kig-pA-kf4">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="BJT-1U-PZF">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="72"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.28235294117647058" green="0.6588235294117647" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="4cx-lu-dHp"/>
+                                    <constraint firstAttribute="centerX" secondItem="ozH-kK-9SQ" secondAttribute="centerX" id="N8v-8X-hYd"/>
+                                    <constraint firstItem="Kig-pA-kf4" firstAttribute="centerY" secondItem="ozH-kK-9SQ" secondAttribute="centerY" id="Ogy-C4-bz0"/>
+                                    <constraint firstItem="ozH-kK-9SQ" firstAttribute="leading" secondItem="Kig-pA-kf4" secondAttribute="trailing" constant="49" id="a3s-g1-i0W">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="48"/>
+                                    </constraint>
+                                    <constraint firstAttribute="centerY" secondItem="ozH-kK-9SQ" secondAttribute="centerY" id="zkL-bN-uFo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -214,12 +234,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="timerLabel" destination="Kig-pA-kf4" id="ViS-4z-ovG"/>
                         <segue destination="Xs6-Oa-N0f" kind="presentation" identifier="editVideoSegue" id="L5W-ug-1XX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4084.5" y="1030.5"/>
+            <point key="canvasLocation" x="-3085.5" y="1021.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="c4s-OJ-Abb">
@@ -264,7 +285,7 @@
         <!--CHALLENGERS-->
         <scene sceneID="ALx-ET-TJD">
             <objects>
-                <viewController id="OHL-s4-Jnv" sceneMemberID="viewController">
+                <viewController id="OHL-s4-Jnv" customClass="HomeVideoViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zOv-4f-05X"/>
                         <viewControllerLayoutGuide type="bottom" id="IxJ-nJ-f3x"/>
@@ -279,6 +300,9 @@
                                 <state key="normal" title="NEW">
                                     <color key="titleColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reloadVideos:" destination="OHL-s4-Jnv" eventType="touchUpInside" id="LKo-S0-uGx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63P-k1-dDC">
                                 <rect key="frame" x="203" y="64" width="194" height="33"/>
@@ -286,6 +310,9 @@
                                 <state key="normal" title="POPULAR">
                                     <color key="titleColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reloadVideos:" destination="OHL-s4-Jnv" eventType="touchUpInside" id="ev9-Pa-3MV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frd-UQ-UL7">
                                 <rect key="frame" x="405" y="64" width="195" height="33"/>
@@ -293,12 +320,15 @@
                                 <state key="normal" title="FAILS">
                                     <color key="titleColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reloadVideos:" destination="OHL-s4-Jnv" eventType="touchUpInside" id="ZtJ-sz-yKh"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="580" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qCo-eG-1PQ">
                                 <rect key="frame" x="0.0" y="97" width="600" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DAn-Ah-ol8" customClass="HomeVideoTableViewCell" customModule="Challenger" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoTableViewCell" id="DAn-Ah-ol8" customClass="HomeVideoTableViewCell" customModule="Challenger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="580"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DAn-Ah-ol8" id="b0v-PZ-V4o">
@@ -501,6 +531,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CHALLENGERS" id="fAw-pf-hZE"/>
+                    <connections>
+                        <outlet property="tabFailButton" destination="frd-UQ-UL7" id="Rbi-qr-THH"/>
+                        <outlet property="tabNewButton" destination="D2X-MU-i9c" id="ac6-C0-6lc"/>
+                        <outlet property="tabPopularButton" destination="63P-k1-dDC" id="T7W-1Z-IVw"/>
+                        <outlet property="tableView" destination="qCo-eG-1PQ" id="imM-HG-6gA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PI9-Pf-ZkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -585,10 +621,10 @@
             </objects>
             <point key="canvasLocation" x="735" y="1711"/>
         </scene>
-        <!--Challenge Detail View Controller-->
+        <!--ChallengeDetailViewController-->
         <scene sceneID="Sp6-lm-vrW">
             <objects>
-                <viewController id="YfE-cf-isB" customClass="ChallengeDetailViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChallengeDetailViewController" title="ChallengeDetailViewController" id="YfE-cf-isB" customClass="ChallengeDetailViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lcl-rF-nL6"/>
                         <viewControllerLayoutGuide type="bottom" id="clz-J9-rpI"/>
@@ -613,7 +649,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="closeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZD-0H-Tb1"/>
+                                                    <action selector="closeButtonClicked:" destination="YfE-cf-isB" eventType="touchUpInside" id="A7O-jN-YYf"/>
                                                 </connections>
                                             </button>
                                             <connections>
@@ -623,16 +659,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spg-cL-bVz">
-                                <rect key="frame" x="0.0" y="91" width="600" height="48"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.81568627449999997" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="yee-vZ-gVt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3m-9i-WUA">
                                 <rect key="frame" x="0.0" y="137" width="600" height="280"/>
                                 <subviews>
@@ -724,6 +750,16 @@
                                     <action selector="beginButtonClicked:" destination="YfE-cf-isB" eventType="touchUpInside" id="bkS-si-YSW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spg-cL-bVz">
+                                <rect key="frame" x="0.0" y="91" width="600" height="48"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.81568627449999997" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="yee-vZ-gVt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -746,6 +782,7 @@
                     </view>
                     <connections>
                         <outlet property="instructionTextView" destination="ayR-T6-fSl" id="sab-Ph-IXc"/>
+                        <outlet property="navigationBar" destination="nPv-VX-r2R" id="Usn-iu-0Lg"/>
                         <outlet property="requirementTextView" destination="Tbb-8e-7QX" id="tvs-20-SBw"/>
                         <outlet property="titleLabel" destination="Spg-cL-bVz" id="s26-Di-h0U"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToUpload" action="showDetailViewController:sender:" id="gEy-kF-Sgc"/>
@@ -753,7 +790,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGI-sx-4Uy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4758" y="1030.5"/>
+            <point key="canvasLocation" x="-3760" y="1022"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SpS-fD-GZ7">
@@ -920,6 +957,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FO-U5-4LR">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Challenges" id="QNj-rT-3pT">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="suz-w6-6Vd">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qLD-3t-oa1">
+                                                <rect key="frame" x="20" y="10" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="camera-close">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeButtonClicked:" destination="B7r-A7-Vwx" eventType="touchUpInside" id="Kkx-u0-rKT"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AEc-SP-JDu">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -947,32 +1007,6 @@
                                     <outlet property="delegate" destination="B7r-A7-Vwx" id="361-wL-juh"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FO-U5-4LR">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Challenges" id="QNj-rT-3pT">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="suz-w6-6Vd">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qLD-3t-oa1">
-                                                <rect key="frame" x="20" y="10" width="24" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" backgroundImage="camera-close">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="closeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHE-lq-oq1"/>
-                                                </connections>
-                                            </button>
-                                            <connections>
-                                                <action selector="closeButtonClicked:" destination="B7r-A7-Vwx" id="oOg-Nc-wyp"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -987,13 +1021,12 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="AEc-SP-JDu" id="whu-bp-uJK"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToUpload" action="showDetailViewController:sender:" id="Vcz-Y6-SNy"/>
-                        <segue destination="YfE-cf-isB" kind="show" identifier="segueToChallengeDetail" id="SfK-jV-GgX"/>
+                        <segue destination="YfE-cf-isB" kind="show" identifier="segueToChallengeDetail" action="showDetailViewController:sender:" id="SfK-jV-GgX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2z-XL-hyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5434.5" y="1030.5"/>
+            <point key="canvasLocation" x="-4435" y="1022"/>
         </scene>
         <!--Landing View Controller-->
         <scene sceneID="hbK-WV-UIO">
@@ -1427,7 +1460,4 @@
         <image name="tab_profile_0" width="20" height="25"/>
         <image name="tagline_reverse" width="250" height="444"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Vcz-Y6-SNy"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -12,17 +12,21 @@ import AssetsLibrary
 
 class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
+    @IBOutlet weak var timerLabel: UILabel!
+
     var challenge: CLChallenge!;
-    
+    var timer: NSTimer!;
+    var timeMilli: Int = 0;
+    var timeSec: Int = 0;
+    var timeMin: Int = 0;
     var captureVideoPreviewLayer : AVCaptureVideoPreviewLayer!
     var session : AVCaptureSession!
     var movieFileOutput : AVCaptureMovieFileOutput!
     var backgroundRecordingID : UIBackgroundTaskIdentifier!
     
-    
     override func viewDidLoad() {
         //        videoTimeControl.setThumbImage(UIImage(named: "thumb"), forState: UIControlState.Normal)
-        startStreamLiveCanmera()
+        startStreamLiveCanmera();
     }
     
     func startStreamLiveCanmera() {
@@ -67,8 +71,12 @@ class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecording
                 connection.preferredVideoStabilizationMode = .Auto
             }
             self.movieFileOutput = movieFileOutput
-            
         }
+        
+        //Format the timer 00:00
+        var timeNow = String(format: "%02d:%02d", self.timeMin, self.timeSec);
+        //Display on your label
+        self.timerLabel.text = timeNow;
         
         session.startRunning()
     }
@@ -76,6 +84,22 @@ class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecording
         self.dismissViewControllerAnimated(true) { () -> Void in
             
         }
+    }
+    
+    func updateTimer() {
+        self.timeMilli++
+        if (self.timeMilli == 100) {
+            self.timeMilli = 0;
+            self.timeSec++
+        }
+        if (self.timeSec == 60) {
+            self.timeSec = 0;
+            self.timeMin++;
+        }
+        //Format the timer 00:00
+        var timeNow = String(format: "%02d:%02d:%02d", self.timeMin, self.timeSec, self.timeMilli);
+        //Display on your label
+        self.timerLabel.text = timeNow;
     }
     
     @IBAction func flashButtonClicked(sender: UIButton) {
@@ -97,10 +121,25 @@ class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecording
             
             // Start recording to a temporary file.
             var outputFilePath = NSTemporaryDirectory().stringByAppendingString("movie.mov")
+            
+            //Add timer
+            self.timer = NSTimer(timeInterval: 0.02, target: self, selector: "updateTimer", userInfo: nil, repeats: true);
+            NSRunLoop.currentRunLoop().addTimer(self.timer, forMode: NSDefaultRunLoopMode);
+            
             self.movieFileOutput.startRecordingToOutputFileURL(NSURL(fileURLWithPath: outputFilePath), recordingDelegate: self)
             
+            //Reset timer
+            self.timeMilli = 0;
+            self.timeMin = 0;
+            self.timeSec = 0;
+            
         } else {
-            self.movieFileOutput.stopRecording()
+            self.movieFileOutput.stopRecording();
+            self.timer.invalidate();
+            //Stop timer
+            self.timeMilli = 0;
+            self.timeMin = 0;
+            self.timeSec = 0;
         }
     }
     
@@ -127,6 +166,7 @@ class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecording
         if (segue.identifier == "editVideoSegue") {
             let outputURL = sender as! NSURL;
             let VC = segue.destinationViewController as! VideoEditViewController;
+            VC.challenge = self.challenge;
             VC.outputURL = outputURL;
         }
     }
