@@ -123,7 +123,7 @@ class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecording
             var outputFilePath = NSTemporaryDirectory().stringByAppendingString("movie.mov")
             
             //Add timer
-            self.timer = NSTimer(timeInterval: 0.02, target: self, selector: "updateTimer", userInfo: nil, repeats: true);
+            self.timer = NSTimer(timeInterval: 0.01, target: self, selector: "updateTimer", userInfo: nil, repeats: true);
             NSRunLoop.currentRunLoop().addTimer(self.timer, forMode: NSDefaultRunLoopMode);
             
             self.movieFileOutput.startRecordingToOutputFileURL(NSURL(fileURLWithPath: outputFilePath), recordingDelegate: self)
