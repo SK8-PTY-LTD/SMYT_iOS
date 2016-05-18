@@ -21,7 +21,7 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate, landing
         self.tabBar.items![2].enabled = false;
         let button = UIButton()
         let buttonImage = UIImage(named: "tab_challenge");
-        button.frame = CGRectMake(0.0, 0.0, self.tabBar.frame.width/6, self.tabBar.frame.width/6*0.592);
+        button.frame = CGRectMake(0.0, 0.0, self.tabBar.frame.height, self.tabBar.frame.height);
         button.setBackgroundImage(buttonImage!, forState: .Normal);
         //        button.setBackgroundImage(highlightImage!, forState: .Highlighted);
         //        [button setBackgroundImage:highlightImage forState:UIControlStateHighlighted];
