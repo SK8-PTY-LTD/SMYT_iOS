@@ -1,1 +1,0 @@
-../../../ICGVideoTrimmer/Source/ICGRulerView.h
