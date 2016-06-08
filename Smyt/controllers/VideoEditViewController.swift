@@ -172,7 +172,7 @@ class VideoEditViewController: UIViewController, ICGVideoTrimmerDelegate {
     }
     
     func cropAndTrimVideo(start: Float64, duration: Float64, isSuccessVideo: Bool) {
-        SwiftSpinner.show("Processing video", animated: true);
+//        SwiftSpinner.show("Processing video", animated: true);
         
         //load our movie Asset
         let asset : AVAsset = AVAsset(URL: self.outputURL) as AVAsset;
