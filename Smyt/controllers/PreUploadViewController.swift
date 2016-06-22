@@ -54,13 +54,20 @@ class PreUploadViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        let challenge = self.challengeArray[indexPath.row];
         // Configure the cell...
         let cellIdentifier = "categoryTableViewCell";
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CategoryTableViewCell;
         
-        cell.categoryTitleLabel.text = "\(indexPath.row + 1). \(self.challengeArray[indexPath.row].name)";
+        cell.categoryTitleLabel.text = "\(challenge.name)";
+        if let urlString = challenge.coverImage.url {
+            cell.backgroundImageView.sd_setImageWithURL(NSURL(string: urlString)) { (image, error, cacheType, url) in
+                //do nothing yet
+            }
+        } else {
+            cell.backgroundImageView.image = UIImage();
+        }
         
         
         return cell;

@@ -5,6 +5,11 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="KittenSwash.ttf">
+            <string>KittenSwash</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Video Capture View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -342,30 +347,17 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                                     <color key="backgroundColor" white="0.53582913870000004" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlu-OA-y5H">
-                                                    <rect key="frame" x="243" y="65" width="115" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlu-OA-y5H">
+                                                    <rect key="frame" x="214" y="70" width="174" height="61"/>
+                                                    <fontDescription key="fontDescription" name="KittenSwash" family="Kitten Swash" pointSize="40"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kH-5O-e89">
-                                                    <rect key="frame" x="278" y="103" width="44" height="19"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="FKb-5n-uxH"/>
-                                                        <constraint firstAttribute="height" constant="19" id="hIW-PY-cfQ"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button" image="smytTitle-icon"/>
-                                                    <connections>
-                                                        <action selector="smytButtonClicked:" destination="go3-WI-j5y" eventType="touchUpInside" id="sWG-iD-Zo5"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ubo-nD-uTv" firstAttribute="leading" secondItem="cC7-Vd-Sww" secondAttribute="leading" id="RD9-vi-UqS"/>
-                                                <constraint firstItem="5kH-5O-e89" firstAttribute="centerX" secondItem="Hlu-OA-y5H" secondAttribute="centerX" id="S6h-Mf-Fjb"/>
-                                                <constraint firstItem="5kH-5O-e89" firstAttribute="top" secondItem="Hlu-OA-y5H" secondAttribute="bottom" constant="8" id="a18-3C-4AU"/>
                                                 <constraint firstAttribute="bottom" secondItem="ubo-nD-uTv" secondAttribute="bottom" id="c5n-y7-UIH"/>
-                                                <constraint firstItem="Hlu-OA-y5H" firstAttribute="centerY" secondItem="cC7-Vd-Sww" secondAttribute="centerY" constant="-20" id="ejC-O8-nG5"/>
+                                                <constraint firstItem="Hlu-OA-y5H" firstAttribute="centerY" secondItem="cC7-Vd-Sww" secondAttribute="centerY" id="ejC-O8-nG5"/>
                                                 <constraint firstItem="ubo-nD-uTv" firstAttribute="top" secondItem="cC7-Vd-Sww" secondAttribute="top" id="hFR-jE-KgX"/>
                                                 <constraint firstAttribute="trailing" secondItem="ubo-nD-uTv" secondAttribute="trailing" id="sNl-XG-BYc"/>
                                                 <constraint firstItem="Hlu-OA-y5H" firstAttribute="centerX" secondItem="cC7-Vd-Sww" secondAttribute="centerX" id="xjO-Ef-c38"/>
@@ -434,7 +426,6 @@
         <image name="camera-flip" width="23" height="24"/>
         <image name="flash-off" width="24" height="25"/>
         <image name="nav_backArrow" width="22" height="22"/>
-        <image name="smytTitle-icon" width="301" height="133"/>
         <image name="smytWhite-nav-icon" width="301" height="133"/>
     </resources>
 </document>
