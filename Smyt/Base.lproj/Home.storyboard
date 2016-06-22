@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyb-ry-74b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyb-ry-74b">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -59,7 +59,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCu-aj-dvd">
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCu-aj-dvd">
                                                             <rect key="frame" x="560" y="17" width="28" height="27"/>
                                                             <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                                                             <state key="normal" image="icon_like_0"/>
@@ -288,10 +288,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smytTitle-icon" translatesAutoresizingMaskIntoConstraints="NO" id="qEL-03-zEN">
-                                    <rect key="frame" x="78" y="4" width="84" height="25"/>
+                                    <rect key="frame" x="88" y="4" width="65" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="FZb-a3-ds2"/>
-                                        <constraint firstAttribute="width" constant="84" id="g9N-Zm-olu"/>
+                                        <constraint firstAttribute="width" constant="65" id="g9N-Zm-olu"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
@@ -516,7 +516,7 @@
         <image name="icon_share" width="22" height="20"/>
         <image name="like-button" width="25" height="24"/>
         <image name="nav_backArrow" width="22" height="22"/>
-        <image name="smytTitle-icon" width="545" height="233"/>
+        <image name="smytTitle-icon" width="301" height="133"/>
         <image name="tab_home_0" width="28" height="25"/>
     </resources>
 </document>

@@ -21,7 +21,7 @@ class ChallengeDetailViewController: UIViewController {
         
         self.navigationBar.items![0].title = "CHALLENGE \(self.challenge.serial)";
         self.titleLabel.text = self.challenge.name;
-        self.instructionTextView.text = self.challenge.instruction;
+//        self.instructionTextView.text = self.challenge.instruction;
         self.requirementTextView.text = self.challenge.requirement;
     }
     

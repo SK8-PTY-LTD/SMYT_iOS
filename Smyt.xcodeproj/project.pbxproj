@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15F89A22044354F8E1D14BC0 /* Pods_Smyt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0941FD9C109A68E4BC7B53 /* Pods_Smyt.framework */; };
+		294E7F801D1A7499009C8906 /* KittenSwash.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 294E7F7F1D1A7499009C8906 /* KittenSwash.ttf */; };
 		29CA37F21CD9C96200F74E65 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CA37F01CD9C96200F74E65 /* Category.storyboard */; };
 		29CA37F41CD9CB3200F74E65 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CA37F31CD9CB3200F74E65 /* CategoryViewController.swift */; };
 		29CA37F61CD9CB6600F74E65 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CA37F51CD9CB6600F74E65 /* CategoryTableViewCell.swift */; };
@@ -100,6 +101,7 @@
 
 /* Begin PBXFileReference section */
 		19C8AFC1E5E1C2829992412B /* Pods-Challenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.debug.xcconfig"; sourceTree = "<group>"; };
+		294E7F7F1D1A7499009C8906 /* KittenSwash.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KittenSwash.ttf; sourceTree = "<group>"; };
 		29B4B1ED1CD9820900DCAE61 /* Smyt-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Smyt-Bridging-Header.h"; sourceTree = "<group>"; };
 		29CA37F11CD9C96200F74E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
 		29CA37F31CD9CB3200F74E65 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 		29E1A5221CD975050028A472 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				294E7F7F1D1A7499009C8906 /* KittenSwash.ttf */,
 				29E1A5231CD975050028A472 /* logo (1).zip */,
 				29E1A5241CD975050028A472 /* logo.png */,
 				29E1A5251CD975050028A472 /* logo.zip */,
@@ -480,7 +483,7 @@
 					};
 					3C3A5CD61C0D8383003B94A3 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = JG6T2Q8MFC;
+						DevelopmentTeam = W26JRPAC63;
 					};
 				};
 			};
@@ -524,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E1A5501CD975050028A472 /* Info.plist in Resources */,
+				294E7F801D1A7499009C8906 /* KittenSwash.ttf in Resources */,
 				29E1A5371CD975050028A472 /* Home.storyboard in Resources */,
 				29E1A55C1CD975050028A472 /* logo.zip in Resources */,
 				29E1A5671CD975050028A472 /* ProfileCustomHeaderView.xib in Resources */,
