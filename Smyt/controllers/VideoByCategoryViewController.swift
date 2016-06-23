@@ -10,8 +10,9 @@ import FBSDKLoginKit
 import AVFoundation
 import APParallaxHeader
 import FBSDKShareKit
+import MessageUI
 
-class VideoByCategoryViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, HomeVideoTableViewCellProtocol{
+class VideoByCategoryViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate,HomeVideoTableViewCellProtocol{
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -505,6 +506,47 @@ class VideoByCategoryViewController: UIViewController,UITableViewDelegate, UITab
         } else {
             NSLog("Set share content error");
         }
+    }
+    
+    func moreButtonClicked(video: CLVideo) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController();
+            mail.mailComposeDelegate = self;
+            var email = "";
+            var senderName = "";
+            if let owner = video.owner {
+                email = owner.email;
+            }
+            
+            if let user = CL.currentUser {
+                if let name = user.profileName {
+                    senderName = name;
+                }
+            }
+            
+            mail.setToRecipients([email]);
+            mail.setSubject("Feedback for SMYT video from " + senderName);
+            //            mail.setMessageBody("Blabla", isHTML: false);
+            self.presentViewController(mail, animated: true, completion: nil)
+        } else {
+            CL.promote("Please setup the mailbox on the phone to continue");
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Cancelled");
+        case MFMailComposeResultSaved.rawValue:
+            print("Saved");
+        case MFMailComposeResultSent.rawValue:
+            print("Sent");
+        case MFMailComposeResultFailed.rawValue:
+            print("Error: \(error?.localizedDescription)");
+        default:
+            break
+        }
+        controller.dismissViewControllerAnimated(true, completion: nil);
     }
     
     @IBAction func backButtonClicked(sender: AnyObject) {

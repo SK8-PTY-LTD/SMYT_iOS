@@ -10,6 +10,7 @@ import Foundation
 import AVFoundation
 import FBSDKCoreKit
 import FBSDKShareKit
+import MessageUI
 
 protocol HomeVideoTableViewCellProtocol {
     func presentViewController(VC: UIViewController);
@@ -17,6 +18,7 @@ protocol HomeVideoTableViewCellProtocol {
     func commentButtonClicked(video: CLVideo);
     func goToProfile(user: CLUser);
     func shareButtonClicked(video: CLVideo);
+    func moreButtonClicked(video: CLVideo);
 }
 
 class HomeVideoTableViewCell: UITableViewCell {
@@ -103,7 +105,7 @@ class HomeVideoTableViewCell: UITableViewCell {
     }
     
     @IBAction func moreButtonClicked(sender: AnyObject) {
-        
+        self.delegate?.moreButtonClicked(self.video);
     }
     
     override func layoutSubviews() {
