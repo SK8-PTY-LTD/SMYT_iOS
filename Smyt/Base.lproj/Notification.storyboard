@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1c9-Yj-0Uk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1c9-Yj-0Uk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -161,11 +161,11 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="936"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoTableViewCell" rowHeight="633" id="CTN-8x-ZBy" customClass="HomeVideoTableViewCell" customModule="Smyt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="633"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoTableViewCell" rowHeight="800" id="CTN-8x-ZBy" customClass="HomeVideoTableViewCell" customModule="Smyt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="800"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CTN-8x-ZBy" id="5zo-1A-omf">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="632"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="799"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vPH-mR-IbT">
@@ -222,9 +222,12 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-kl-sZZ">
                                                     <rect key="frame" x="0.0" y="668" width="600" height="120"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1B-m4-duo">
-                                                            <rect key="frame" x="203" y="4" width="194" height="22"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1B-m4-duo">
+                                                            <rect key="frame" x="86" y="4" width="100" height="22"/>
                                                             <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="U0C-FB-3LJ"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title=" Comments" image="icon-message">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -233,21 +236,11 @@
                                                                 <action selector="commentButtonClicked:" destination="CTN-8x-ZBy" eventType="touchUpInside" id="JT1-Bz-dMg"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsS-1r-ay8">
-                                                            <rect key="frame" x="397" y="4" width="195" height="22"/>
-                                                            <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <state key="normal" title=" Views" image="icon_share">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="shareButtonClicked:" destination="CTN-8x-ZBy" eventType="touchUpInside" id="FEP-Lf-oP3"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gb-mU-DtA">
-                                                            <rect key="frame" x="8" y="4" width="195" height="22"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gb-mU-DtA">
+                                                            <rect key="frame" x="8" y="4" width="70" height="22"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="22" id="JNh-lS-q4g"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Dam-f7-0fx"/>
+                                                                <constraint firstAttribute="height" constant="22" id="Xxr-7a-Hvi"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title=" likes" image="like-button">
@@ -257,14 +250,14 @@
                                                                 <action selector="likeButtonClicked:" destination="CTN-8x-ZBy" eventType="touchUpInside" id="Sez-R4-JPz"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-message" translatesAutoresizingMaskIntoConstraints="NO" id="O9o-38-jZt">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-message" translatesAutoresizingMaskIntoConstraints="NO" id="O9o-38-jZt">
                                                             <rect key="frame" x="8" y="34" width="22" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="22" id="Ah2-bm-LK3"/>
                                                                 <constraint firstAttribute="height" constant="19" id="Wuv-CT-8F5"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVZ-yF-c4g">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVZ-yF-c4g">
                                                             <rect key="frame" x="38" y="34" width="554" height="78"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -272,28 +265,55 @@
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" calendarEvent="YES"/>
                                                         </textView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsS-1r-ay8">
+                                                            <rect key="frame" x="194" y="4" width="70" height="22"/>
+                                                            <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="eJ9-T9-MCR"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <state key="normal" title=" Views" image="icon_share">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="shareButtonClicked:" destination="CTN-8x-ZBy" eventType="touchUpInside" id="FEP-Lf-oP3"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8d-8x-4YJ">
+                                                            <rect key="frame" x="552" y="4" width="40" height="22"/>
+                                                            <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="C0X-tj-SJt"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <state key="normal" image="button-more">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="moreButtonClicked:" destination="CTN-8x-ZBy" eventType="touchUpInside" id="CaZ-86-MxH"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="xVZ-yF-c4g" secondAttribute="bottom" constant="8" id="2yi-pj-OkK"/>
                                                         <constraint firstItem="xVZ-yF-c4g" firstAttribute="leading" secondItem="O9o-38-jZt" secondAttribute="trailing" constant="8" id="DKi-uC-jL5"/>
-                                                        <constraint firstAttribute="trailing" secondItem="WsS-1r-ay8" secondAttribute="trailing" constant="8" id="E75-vs-Z1k"/>
-                                                        <constraint firstItem="g1B-m4-duo" firstAttribute="height" secondItem="6Gb-mU-DtA" secondAttribute="height" id="K68-VO-Ddl"/>
-                                                        <constraint firstItem="WsS-1r-ay8" firstAttribute="centerY" secondItem="g1B-m4-duo" secondAttribute="centerY" id="L7U-Hk-H0C"/>
-                                                        <constraint firstItem="WsS-1r-ay8" firstAttribute="height" secondItem="g1B-m4-duo" secondAttribute="height" id="Y7y-t7-Pbn"/>
-                                                        <constraint firstItem="6Gb-mU-DtA" firstAttribute="top" secondItem="h5J-kl-sZZ" secondAttribute="top" constant="4" id="Ynt-Ot-W7e"/>
+                                                        <constraint firstItem="g1B-m4-duo" firstAttribute="leading" secondItem="6Gb-mU-DtA" secondAttribute="trailing" constant="8" id="DjA-7B-zwP"/>
+                                                        <constraint firstItem="w8d-8x-4YJ" firstAttribute="height" secondItem="WsS-1r-ay8" secondAttribute="height" id="Dwe-gm-FYe"/>
+                                                        <constraint firstItem="g1B-m4-duo" firstAttribute="top" secondItem="6Gb-mU-DtA" secondAttribute="top" id="Ho8-jW-Iff"/>
+                                                        <constraint firstItem="WsS-1r-ay8" firstAttribute="leading" secondItem="g1B-m4-duo" secondAttribute="trailing" constant="8" id="JHf-VQ-Jh4"/>
+                                                        <constraint firstItem="w8d-8x-4YJ" firstAttribute="top" secondItem="WsS-1r-ay8" secondAttribute="top" id="Ug6-TW-cZg"/>
                                                         <constraint firstAttribute="trailing" secondItem="xVZ-yF-c4g" secondAttribute="trailing" constant="8" id="aUi-cL-7Hs"/>
-                                                        <constraint firstItem="g1B-m4-duo" firstAttribute="width" secondItem="6Gb-mU-DtA" secondAttribute="width" id="awv-id-JMb"/>
-                                                        <constraint firstItem="g1B-m4-duo" firstAttribute="leading" secondItem="6Gb-mU-DtA" secondAttribute="trailing" id="c1G-f4-ebg"/>
-                                                        <constraint firstItem="6Gb-mU-DtA" firstAttribute="leading" secondItem="h5J-kl-sZZ" secondAttribute="leading" constant="8" id="cfK-XC-pBd"/>
-                                                        <constraint firstItem="WsS-1r-ay8" firstAttribute="leading" secondItem="g1B-m4-duo" secondAttribute="trailing" id="fll-DH-5rH"/>
+                                                        <constraint firstItem="6Gb-mU-DtA" firstAttribute="leading" secondItem="h5J-kl-sZZ" secondAttribute="leadingMargin" id="eak-gj-olU"/>
+                                                        <constraint firstItem="WsS-1r-ay8" firstAttribute="top" secondItem="g1B-m4-duo" secondAttribute="top" id="fBQ-Dg-2e0"/>
+                                                        <constraint firstItem="w8d-8x-4YJ" firstAttribute="trailing" secondItem="h5J-kl-sZZ" secondAttribute="trailingMargin" id="gMP-XB-WdW"/>
+                                                        <constraint firstItem="g1B-m4-duo" firstAttribute="height" secondItem="6Gb-mU-DtA" secondAttribute="height" id="k9P-nv-tcE"/>
                                                         <constraint firstItem="xVZ-yF-c4g" firstAttribute="top" secondItem="O9o-38-jZt" secondAttribute="top" id="lPn-ab-Yhu"/>
-                                                        <constraint firstItem="g1B-m4-duo" firstAttribute="centerY" secondItem="6Gb-mU-DtA" secondAttribute="centerY" id="orc-mL-ECC"/>
                                                         <constraint firstAttribute="height" constant="120" id="p3X-3a-aRS">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="120"/>
                                                         </constraint>
-                                                        <constraint firstItem="O9o-38-jZt" firstAttribute="top" secondItem="6Gb-mU-DtA" secondAttribute="bottom" constant="8" id="qE7-oC-nzC"/>
-                                                        <constraint firstItem="WsS-1r-ay8" firstAttribute="width" secondItem="g1B-m4-duo" secondAttribute="width" id="rLb-FC-nOW"/>
+                                                        <constraint firstItem="6Gb-mU-DtA" firstAttribute="top" secondItem="h5J-kl-sZZ" secondAttribute="top" constant="4" id="tKi-O6-OFG"/>
                                                         <constraint firstItem="O9o-38-jZt" firstAttribute="leading" secondItem="h5J-kl-sZZ" secondAttribute="leading" constant="8" id="u8D-r9-qhU"/>
+                                                        <constraint firstItem="WsS-1r-ay8" firstAttribute="height" secondItem="g1B-m4-duo" secondAttribute="height" id="yQs-qz-Z9D"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uCB-dV-bch" customClass="AVImageView" customModule="Smyt" customModuleProvider="target">
@@ -331,7 +351,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loadMoreCell" textLabel="jp1-Yz-DWa" rowHeight="647" style="IBUITableViewCellStyleDefault" id="AJ1-mr-6ZZ">
-                                        <rect key="frame" x="0.0" y="661" width="600" height="647"/>
+                                        <rect key="frame" x="0.0" y="828" width="600" height="647"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJ1-mr-6ZZ" id="gZ8-2A-1ze">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="646"/>
@@ -665,6 +685,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button-more" width="25" height="7"/>
         <image name="default_profile" width="100" height="100"/>
         <image name="icon-message" width="25" height="24"/>
         <image name="icon_like_0" width="28" height="27"/>

@@ -29,6 +29,8 @@ class HomeVideoTableViewCell: UITableViewCell {
     @IBOutlet weak var verifyButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView! //For video
     @IBOutlet weak var videoThumbnailView: AVImageView!
     @IBOutlet weak var imageActivityIndicator: UIActivityIndicatorView! //For image
@@ -98,6 +100,10 @@ class HomeVideoTableViewCell: UITableViewCell {
     
     @IBAction func shareButtonClicked(sender: UIButton) {
         self.delegate?.shareButtonClicked(self.video);
+    }
+    
+    @IBAction func moreButtonClicked(sender: AnyObject) {
+        
     }
     
     override func layoutSubviews() {

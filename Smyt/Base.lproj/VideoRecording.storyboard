@@ -353,12 +353,18 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2bJ-Ho-t1N">
+                                                    <rect key="frame" x="290" y="90" width="20" height="20"/>
+                                                    <color key="color" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ubo-nD-uTv" firstAttribute="leading" secondItem="cC7-Vd-Sww" secondAttribute="leading" id="RD9-vi-UqS"/>
+                                                <constraint firstItem="2bJ-Ho-t1N" firstAttribute="centerX" secondItem="cC7-Vd-Sww" secondAttribute="centerX" id="Zs2-d6-ojs"/>
                                                 <constraint firstAttribute="bottom" secondItem="ubo-nD-uTv" secondAttribute="bottom" id="c5n-y7-UIH"/>
                                                 <constraint firstItem="Hlu-OA-y5H" firstAttribute="centerY" secondItem="cC7-Vd-Sww" secondAttribute="centerY" id="ejC-O8-nG5"/>
                                                 <constraint firstItem="ubo-nD-uTv" firstAttribute="top" secondItem="cC7-Vd-Sww" secondAttribute="top" id="hFR-jE-KgX"/>
+                                                <constraint firstItem="2bJ-Ho-t1N" firstAttribute="centerY" secondItem="cC7-Vd-Sww" secondAttribute="centerY" id="rJa-g3-Uuy"/>
                                                 <constraint firstAttribute="trailing" secondItem="ubo-nD-uTv" secondAttribute="trailing" id="sNl-XG-BYc"/>
                                                 <constraint firstItem="Hlu-OA-y5H" firstAttribute="centerX" secondItem="cC7-Vd-Sww" secondAttribute="centerX" id="xjO-Ef-c38"/>
                                             </constraints>
@@ -367,6 +373,7 @@
                                         <connections>
                                             <outlet property="backgroundImageView" destination="ubo-nD-uTv" id="gdS-Yb-axO"/>
                                             <outlet property="categoryTitleLabel" destination="Hlu-OA-y5H" id="Nwc-NK-yQ6"/>
+                                            <outlet property="cellSpinner" destination="2bJ-Ho-t1N" id="2FP-t7-jLK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -375,12 +382,18 @@
                                     <outlet property="delegate" destination="OVd-pb-HxT" id="W7z-M5-UDa"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Qky-DL-9vZ">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <color key="color" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="eTM-4S-PX9" secondAttribute="trailing" id="3B2-cT-9Se"/>
+                            <constraint firstItem="Qky-DL-9vZ" firstAttribute="centerX" secondItem="3q2-MS-rCj" secondAttribute="centerX" id="7yg-7h-2lY"/>
                             <constraint firstItem="C4Z-3S-AfP" firstAttribute="top" secondItem="eTM-4S-PX9" secondAttribute="bottom" id="C1Z-zf-6rQ"/>
                             <constraint firstItem="eTM-4S-PX9" firstAttribute="leading" secondItem="3q2-MS-rCj" secondAttribute="leading" id="DTd-dC-aNc"/>
+                            <constraint firstItem="Qky-DL-9vZ" firstAttribute="centerY" secondItem="3q2-MS-rCj" secondAttribute="centerY" id="I5O-Sa-zSg"/>
                             <constraint firstItem="eTM-4S-PX9" firstAttribute="top" secondItem="Q4C-rB-mwF" secondAttribute="bottom" id="Ns8-Zg-lTR"/>
                         </constraints>
                     </view>
@@ -394,6 +407,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="eTM-4S-PX9" id="bPb-NP-aJo"/>
+                        <outlet property="viewSpinner" destination="Qky-DL-9vZ" id="O7v-bp-39z"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToVideoCapture" id="L8m-WI-P84"/>
                     </connections>
                 </viewController>

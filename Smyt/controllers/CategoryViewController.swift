@@ -13,6 +13,7 @@ class CategoryViewController: UIViewController, UIScrollViewDelegate, UITableVie
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewSpinner: UIActivityIndicatorView!
     
     var challengeArray = [CLChallenge]();
     var selectedChallenge: CLChallenge?;
@@ -22,15 +23,22 @@ class CategoryViewController: UIViewController, UIScrollViewDelegate, UITableVie
 
         let query = CLChallenge.query();
         query.orderByAscending("serial");
+        self.tableView.hidden = true;
+        self.viewSpinner.startAnimating();
         query.findObjectsInBackgroundWithBlock { (challengeArray, error) -> Void in
             if let e = error {
                 CL.showError(e);
+                self.tableView.hidden = false;
+                self.viewSpinner.stopAnimating();
             } else {
                 self.challengeArray = challengeArray as! [CLChallenge];
                 self.tableView.reloadData();
+                self.tableView.hidden = false;
+                self.viewSpinner.stopAnimating();
             }
         }
     }
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         if (self.searchBar.text == ""){
             CL.promote("Please enter search content");
@@ -70,41 +78,7 @@ class CategoryViewController: UIViewController, UIScrollViewDelegate, UITableVie
         self.performSegueWithIdentifier("segueToVideoByCategory", sender: usernameQuery);
     }
     
-//    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-//        if (self.searchBar.text == ""){
-//            CL.promote("Please enter search content");
-//            return;
-//        }
-//        
-//        let captionQuery = CLVideo.query();
-//        captionQuery.whereKey("caption", containsString: self.searchBar.text);
-//        captionQuery.whereKey("status", equalTo: CLVideo.STATUS.LISTING);
-//        captionQuery.cachePolicy = .NetworkElseCache;
-//        captionQuery.includeKey("challenge");
-//        captionQuery.includeKey("owner");
-//        captionQuery.includeKey("thumbNailImage");
-//        captionQuery.includeKey("file");
-//        captionQuery.orderByDescending("createdAt");
-//        
-//        let usernameInnerQuery = CLUser.query();
-//        usernameInnerQuery.whereKey("profileName", containsString: self.searchBar.text);
-//        let usernameQuery = CLVideo.query();
-//        usernameQuery.whereKey("ownser", matchesQuery: usernameInnerQuery);
-//        usernameQuery.whereKey("status", equalTo: CLVideo.STATUS.LISTING);
-//        usernameQuery.cachePolicy = .NetworkElseCache;
-//        usernameQuery.includeKey("challenge");
-//        usernameQuery.includeKey("owner");
-//        usernameQuery.includeKey("thumbNailImage");
-//        usernameQuery.includeKey("file");
-//        usernameQuery.orderByDescending("createdAt");
-//        
-//        let query = AVQuery.orQueryWithSubqueries([captionQuery, usernameQuery]);
-//        
-//        self.performSegueWithIdentifier("segueToVideoByCategory", sender: query);
-//    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1;
     }
     
@@ -127,8 +101,10 @@ class CategoryViewController: UIViewController, UIScrollViewDelegate, UITableVie
         cell.categoryTitleLabel.text = "\(challenge.name)";
         
         if let urlString = challenge.coverImage.url {
+            cell.cellSpinner.startAnimating();
             cell.backgroundImageView.sd_setImageWithURL(NSURL(string: urlString)) { (image, error, cacheType, url) in
                 //do nothing yet
+                cell.cellSpinner.stopAnimating();
             }
         } else {
             cell.backgroundImageView.image = UIImage();

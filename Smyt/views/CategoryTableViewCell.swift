@@ -12,6 +12,8 @@ class CategoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var categoryTitleLabel: UILabel!
+    @IBOutlet weak var cellSpinner: UIActivityIndicatorView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

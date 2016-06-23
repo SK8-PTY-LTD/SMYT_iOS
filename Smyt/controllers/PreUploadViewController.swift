@@ -10,7 +10,9 @@ import UIKit
 
 class PreUploadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
+    @IBOutlet weak var viewSpinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
+    
     var challengeArray = [CLChallenge]();
     var selectedChallenge: CLChallenge?;
     
@@ -18,12 +20,19 @@ class PreUploadViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         let query = CLChallenge.query();
         query.orderByAscending("serial");
+        self.tableView.hidden = true;
+        self.viewSpinner.startAnimating();
+        
         query.findObjectsInBackgroundWithBlock { (challengeArray, error) -> Void in
             if let e = error {
                 CL.showError(e);
+                self.tableView.hidden = false;
+                self.viewSpinner.stopAnimating();
             } else {
                 self.challengeArray = challengeArray as! [CLChallenge];
                 self.tableView.reloadData();
+                self.tableView.hidden = false;
+                self.viewSpinner.stopAnimating();
             }
         }
         
@@ -62,13 +71,13 @@ class PreUploadViewController: UIViewController, UITableViewDelegate, UITableVie
         
         cell.categoryTitleLabel.text = "\(challenge.name)";
         if let urlString = challenge.coverImage.url {
+            cell.cellSpinner.startAnimating();
             cell.backgroundImageView.sd_setImageWithURL(NSURL(string: urlString)) { (image, error, cacheType, url) in
-                //do nothing yet
+                cell.cellSpinner.stopAnimating();
             }
         } else {
             cell.backgroundImageView.image = UIImage();
         }
-        
         
         return cell;
     }
