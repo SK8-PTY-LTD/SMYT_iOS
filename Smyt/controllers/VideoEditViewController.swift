@@ -300,6 +300,7 @@ class VideoEditViewController: UIViewController, ICGVideoTrimmerDelegate {
                             video.caption = self.captionTextView.text;
                             video.saveInBackgroundWithBlock({ (success, error) -> Void in
                                 if let e = error {
+                                    CL.showError(e);
 //                                    SwiftSpinner.show(e.localizedDescription + ", Please try again.").addTapHandler({
 //                                        SwiftSpinner.hide();
 //                                    })
@@ -308,6 +309,8 @@ class VideoEditViewController: UIViewController, ICGVideoTrimmerDelegate {
 //                                        SwiftSpinner.hide();
 //                                        self.dismissViewControllerAnimated(true, completion: nil);
 //                                        }, subtitle: "Tap to continue.")
+                                    
+                                    self.dismissViewControllerAnimated(true, completion: nil);
                                     //Save level
                                     let level = CLLevel(user: CL.currentUser, video: video, levelNumber: CL.currentUser.level+1);
                                     level.saveInBackground();
