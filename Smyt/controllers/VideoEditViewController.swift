@@ -253,13 +253,13 @@ class VideoEditViewController: UIViewController, ICGVideoTrimmerDelegate {
             }
             
             let data = NSData(contentsOfURL: exportUrl);
-            NSLog("123");
+//            NSLog("123");
             //NSLog("\(self.challenge.serial)");
             //NSLog("\(self.challenge.name)");
             NSLog("\(CL.currentUser.profileName).mp4");
             let file = AVFile(name: "\(CL.currentUser.profileName).mp4", data: data);
             
-            NSLog("321");
+//            NSLog("321");
             //Generate thumbnail image
             let croppedAsset = AVURLAsset(URL: exportUrl, options: nil);
             let imgGenerator = AVAssetImageGenerator(asset: croppedAsset);
