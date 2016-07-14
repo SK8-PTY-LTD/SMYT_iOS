@@ -161,7 +161,7 @@
                                     <action selector="profileImageViewClicked:" destination="pqn-ef-1Im" eventType="touchUpInside" id="BJX-ya-pWv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Skate0627" borderStyle="line" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5B-zD-P04">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5B-zD-P04">
                                 <rect key="frame" x="20" y="220" width="560" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="560" id="BAw-f1-7b5"/>
@@ -179,7 +179,7 @@
                                     <outlet property="delegate" destination="pqn-ef-1Im" id="iqX-6q-8ML"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="133342302@163.com" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-i5-b7O">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-i5-b7O">
                                 <rect key="frame" x="20" y="256" width="560" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="j1J-52-W9m"/>
@@ -256,7 +256,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jacktator" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-f5-rnM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-f5-rnM">
                                 <rect key="frame" x="20" y="184" width="560" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="zku-Vc-wOV"/>
@@ -357,7 +357,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="133342302@163.com" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VbM-QC-5Uf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VbM-QC-5Uf">
                                 <rect key="frame" x="20" y="92" width="560" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Om1-uw-fhS"/>
@@ -365,7 +365,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Skate0627" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vod-t2-eKB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vod-t2-eKB">
                                 <rect key="frame" x="20" y="128" width="560" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="SaU-6S-PuW"/>
