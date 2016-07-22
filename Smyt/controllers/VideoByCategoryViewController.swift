@@ -310,7 +310,7 @@ class VideoByCategoryViewController: UIViewController,UITableViewDelegate, UITab
             if let urlString = video.thumbNailImage?.url {
                 let url = NSURL(string: urlString);
 //                CL.stampTime();
-                cell.videoThumbnailView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "default_video")!);
+                cell.videoThumbnailView.sd_setImageWithURL(url, placeholderImage: UIImage());
             }
             
         } else {

@@ -160,7 +160,7 @@
                                             <subviews>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pFo-d6-gVP">
                                                     <rect key="frame" x="282" y="349" width="37" height="37"/>
-                                                    <color key="color" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="color" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-yX-bAd">
                                                     <rect key="frame" x="0.0" y="668" width="600" height="120"/>

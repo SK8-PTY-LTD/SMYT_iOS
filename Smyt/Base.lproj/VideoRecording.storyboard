@@ -30,7 +30,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYR-Sz-Xkl">
                                 <rect key="frame" x="0.0" y="64" width="600" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-4Q-zjK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-4Q-zjK">
                                         <rect key="frame" x="288" y="18" width="24" height="25"/>
                                         <state key="normal" image="flash-off">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,7 +132,7 @@
                         <outlet property="cameraFlipButton" destination="13z-qH-aQp" id="l0v-oc-kbF"/>
                         <outlet property="flashButton" destination="5CM-4Q-zjK" id="YBU-Gi-qvg"/>
                         <outlet property="timerLabel" destination="Kig-pA-kf4" id="ViS-4z-ovG"/>
-                        <segue destination="Rq6-A5-hfe" kind="presentation" identifier="editVideoSegue" id="lL3-xp-NJ3"/>
+                        <segue destination="Rq6-A5-hfe" kind="show" identifier="editVideoSegue" id="lL3-xp-NJ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -158,7 +158,7 @@
                                     <constraint firstAttribute="height" constant="160" id="3zO-Me-uW5"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-Eh-8kM" customClass="TPKeyboardAvoidingScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-Eh-8kM" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="0.0" y="20" width="600" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50h-q5-IQL">

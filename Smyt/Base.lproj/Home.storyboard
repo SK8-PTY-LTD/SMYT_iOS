@@ -35,7 +35,7 @@
                                             <subviews>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bIb-oc-eDP">
                                                     <rect key="frame" x="282" y="350" width="37" height="37"/>
-                                                    <color key="color" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="color" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lK6-Ih-lZj">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
