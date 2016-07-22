@@ -27,7 +27,8 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     var selectedSubmenuButton: UIButton!
     
     var videoArray = [CLVideo]();
-    var videoItemArray = [AVPlayerItem]();
+//    var videoItemArray = [AVPlayerItem]();
+    var playerArray = [AVPlayer]();
     
     //For paging
     var currentPage = 0;
@@ -94,7 +95,8 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     func refreshVideos() {
         self.currentPage = 0;
         self.videoArray = [CLVideo]();
-        self.videoItemArray = [AVPlayerItem]();
+//        self.videoItemArray = [AVPlayerItem]();
+        self.playerArray = [AVPlayer]();
         self.isLoadingMoreVideos = true;
         self.tableView.reloadData();
         NSLog("cleared video arrays");
@@ -150,21 +152,11 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
             innerQuery.includeKey("followee");
             
             let data = innerQuery.findObjects();
-            var followeeArray = [CLUser]();
+            
             for temp in data {
-                //followeeArray.append(temp.objectForKey("followee") as! CLUser);
                 query.whereKey("owner", equalTo: temp.objectForKey("followee"));
             }
-            
             query.orderByDescending("createdAt");
-            //query.whereKey("owner", matchesQuery:innerQuery);
-//            query.findObjectsInBackgroundWithBlock({ (data, error) in
-//                if let e = error {
-//                    CL.showError(e);
-//                } else {
-//                    NSLog("Query: \(data)");
-//                }
-//            })
         }
         
         query.findObjectsInBackgroundWithBlock { (downloadArray, error) -> Void in
@@ -172,19 +164,10 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                 CL.showError(e);
             } else {
                 
-                //CL.logWithTimeStamp("Video Objs downloaded.");
-                //CL.stampTime();
-                
-                //If at initial page, remove all preious resources
-//                if (self.currentPage == 0) {
-//                    self.videoArray = [CLVideo]();
-//                    self.videoItemArray = [AVPlayerItem]();
-//                }
-                //NSLog("download data \(downloadArray)");
                 //Insert downloaded video objects
                 for (var i = 0; i < downloadArray.count; i++) {
                     
-                    //Kepp a reference of i, as position
+                    //Keep a reference of i, as position
                     //This is a muct, as it is required by the async task below. DO NOT REMOVE
                     let index = self.currentPage * self.numbeOfVideoPerReload + i
                     
@@ -192,15 +175,15 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                     NSLog("videoArray insert video at index \(index) count \(self.videoArray.count)");
                     self.videoArray.insert(video, atIndex: index);
                     
-                    //CL.stampTime();
-                    
                     //add an placeholder item to array, to be replaced by async task below. DO NOT REMOVE
                     let url = NSURL(string: (video.file?.url!)!);
                     let placeholderItem = AVPlayerItem(URL: url!);
                     
                     NSLog("video array count: \(self.videoArray.count)");
-                    NSLog("video item array count: \(self.videoItemArray.count)");
-                    self.videoItemArray.insert(placeholderItem, atIndex: index);
+//                    NSLog("video item array count: \(self.videoItemArray.count)");
+                    NSLog("Player array count: \(self.playerArray.count)");
+//                    self.videoItemArray.insert(placeholderItem, atIndex: index);
+                    self.playerArray.insert(AVPlayer(playerItem: placeholderItem), atIndex: index);
                     self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic);
                     
                     //Cache video
@@ -222,7 +205,8 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                             let videoItem = AVPlayerItem(asset: asset);
                             
                             //Replace non-buffered playItem with newly pre-buffered playItem
-                            self.videoItemArray[index] = videoItem;
+//                            self.videoItemArray[index] = videoItem;
+                            self.playerArray[index] = AVPlayer(playerItem: videoItem);
 //                            CL.logWithTimeStamp("Cached video item loaded, Size: \(videoSize) MB");
                         } else {
                             //Video not cached
@@ -233,13 +217,19 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                                 let videoItem = AVPlayerItem(asset: asset);
                                 
                                 //Replace non-buffered playItem with newly pre-buffered playItem
-                                if (self.videoItemArray.count > index){
-                                    NSLog("array count: \(self.videoItemArray.count)");
+//                                if (self.videoItemArray.count > index){
+//                                    NSLog("array count: \(self.videoItemArray.count)");
+//                                    NSLog("index: \(index)");
+//                                    //Replace non-buffered playItem with newly pre-buffered playItem
+//                                    self.videoItemArray[index] = videoItem;
+//                                }
+                                if (self.playerArray.count > index){
+                                    NSLog("array count: \(self.playerArray.count)");
                                     NSLog("index: \(index)");
                                     //Replace non-buffered playItem with newly pre-buffered playItem
-                                    self.videoItemArray[index] = videoItem;
+                                    self.playerArray[index] = AVPlayer(playerItem: videoItem);
                                 }
-                                
+//
 //                                CL.logWithTimeStamp("URL video item loaded");
                             });
                             
@@ -260,11 +250,18 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                                     //Initialize pre-buffered videoItem
                                     let videoItem = AVPlayerItem(asset: asset);
                                     
-                                    if (self.videoItemArray.count > index){
-                                        NSLog("array count: \(self.videoItemArray.count)");
+//                                    if (self.videoItemArray.count > index){
+//                                        NSLog("array count: \(self.videoItemArray.count)");
+//                                        NSLog("index: \(index)");
+//                                        //Replace non-buffered playItem with newly pre-buffered playItem
+//                                        self.videoItemArray[index] = videoItem;
+//                                    }
+                                    
+                                    if (self.playerArray.count > index){
+                                        NSLog("array count: \(self.playerArray.count)");
                                         NSLog("index: \(index)");
                                         //Replace non-buffered playItem with newly pre-buffered playItem
-                                        self.videoItemArray[index] = videoItem;
+                                        self.playerArray[index] = AVPlayer(playerItem: videoItem);
                                     }
                                     
                                     
@@ -282,7 +279,7 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                             let videoItem = AVPlayerItem(asset: asset);
                             
                             //Replace non-buffered playItem with newly pre-buffered playItem
-                            self.videoItemArray[index] = videoItem;
+                            self.playerArray[index] = AVPlayer(playerItem: videoItem);
 //                            CL.logWithTimeStamp("URL video item loaded");
                         });
                     }
@@ -337,61 +334,48 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         cell.captionTextView.textContainer.maximumNumberOfLines = 3;
         cell.captionTextView.textContainer.lineBreakMode = NSLineBreakMode.ByTruncatingTail;
         cell.captionTextView.contentInset = UIEdgeInsetsMake(-10, 0, 0, 0);
-        
+        cell.delegate = self;
         //Get corresponding video
         
         //The following settings is only applied for non-initial cell
         let video = self.videoArray[indexPath.row];
         cell.video = video;
         
-        //Check if cell is initialized
-        if (cell.videoPlayer != nil) {
-            
-            //Show loading animation
-            cell.avLayer.hidden = true;
-            cell.activityIndicator.startAnimating();
-            
-//            CL.stampTime();
-            
-            //Replace it
-//            CL.stampTime();
-            let playItem = self.videoItemArray[indexPath.row];
-            cell.videoPlayer.replaceCurrentItemWithPlayerItem(playItem);
-//            CL.logWithTimeStamp("Video replaced \(indexPath.row)");
-            
-            //Item replaced, safely show the player
-            cell.activityIndicator.stopAnimating();
-            cell.avLayer.hidden = false;
-            
-            //Add notification
-            //Make sure avplayer layer is displayed after video finished buffering, specifically 1/1000 after current time seconds
-            let currentTime = cell.videoPlayer.currentItem?.currentTime();
-            if (currentTime == nil) {
-                //Cell is loading a new video, reset the time to zero
-                //Make sure avplayer layer is displayed after video finished buffering, specifically 1/1000 seconds
-                cell.videoPlayer.addBoundaryTimeObserverForTimes([NSValue(CMTime: CMTimeMake(1, 1000))], queue: nil, usingBlock: { () -> Void in
-                    //remove observer
-                })
-            } else {
-                let timeToAdd = CMTimeMakeWithSeconds(1, 1000)
-                let observeTime = CMTimeAdd(currentTime!, timeToAdd);
-                cell.videoPlayer.addBoundaryTimeObserverForTimes([NSValue(CMTime: observeTime)], queue: nil, usingBlock: { () -> Void in
-                    //remove observer
-                })
-            }
+        let player = self.playerArray[indexPath.row];
         
+        //Show loading animation
+//        cell.avLayer.hidden = true;
+        cell.activityIndicator.startAnimating();
+
+        //Add notification
+        //Make sure avplayer layer is displayed after video finished buffering, specifically 1/1000 after current time seconds
+        if let currentTime = player.currentItem?.currentTime() {
+            let timeToAdd = CMTimeMakeWithSeconds(1, 1000)
+            let observeTime = CMTimeAdd(currentTime, timeToAdd);
+            player.addBoundaryTimeObserverForTimes([NSValue(CMTime: observeTime)], queue: nil, usingBlock: { () -> Void in
+                //remove observer
+            })
         } else {
-            //Initialize cell if haven't already
-            cell.delegate = self;
-            cell.invalidateIntrinsicContentSize();
+            //Cell is loading a new video, reset the time to zero
+            //Make sure avplayer layer is displayed after video finished buffering, specifically 1/1000 seconds
+            player.addBoundaryTimeObserverForTimes([NSValue(CMTime: CMTimeMake(1, 1000))], queue: nil, usingBlock: { () -> Void in
+                //remove observer
+            })
         }
+        player.actionAtItemEnd = .None;
+        
+        //Item replaced, safely show the player
+        cell.activityIndicator.stopAnimating();
+//        cell.avLayer.hidden = false;
+        cell.videoPlayer = player;
         
         //Play the first video
+        var shoulldInitiallyPlay = false;
         if (indexPath.row == 0) {
             self.currentRegisteredCell = cell;
-            cell.shoulldInitiallyPlay = true;
+            shoulldInitiallyPlay = true;
         } else {
-            cell.shoulldInitiallyPlay = false;
+            shoulldInitiallyPlay = false;
         }
         
         //For Manual Loading, need to load image here
@@ -402,9 +386,76 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                 cell.videoThumbnailView.sd_setImageWithURL(url, placeholderImage: UIImage());
             }
             
-        } else {
-            //Do nothing
         }
+        
+        cell.avLayer = AVPlayerLayer(player: cell.videoPlayer);
+        let width = UIScreen.mainScreen().bounds.width;
+        cell.avLayer.frame = CGRectMake(0, 0, width, width);
+        cell.videoThumbnailView.layer.addSublayer(cell.avLayer);
+        cell.videoThumbnailView.clipsToBounds = true;
+        //Add tap gesture
+        let tap0 = UITapGestureRecognizer(target: cell, action: Selector("handleVideoTap"));
+        tap0.delegate = cell;
+        cell.videoThumbnailView.addGestureRecognizer(tap0);
+        
+        let tap1 = UITapGestureRecognizer(target: cell, action: Selector("handleUserTap"));
+        tap1.delegate = cell;
+        cell.userProfileImage.addGestureRecognizer(tap1);
+        cell.userProfileName.addGestureRecognizer(tap1);
+        
+        
+        //Autoplay the first item
+        if shoulldInitiallyPlay {
+            NSNotificationCenter.defaultCenter().addObserver(cell, selector: "videoLoop", name:AVPlayerItemDidPlayToEndTimeNotification, object: cell.videoPlayer!.currentItem);
+            cell.avLayer.hidden = false;
+            cell.videoPlayer.play();
+            NSLog("showing video hiding thumbnail for initial play");
+        }
+        
+        cell.userProfileName.text = video.owner?.profileName;
+        cell.captionTextView.text = video.caption;
+        //self.captionTextView.sizeToFit();
+        //self.challengeLabel.text = video.challenge?.name;
+        
+        //Setting time
+        //self.videoUploadTimeLabel.text = self.video.createdAt.formattedAsTimeAgo();
+        
+        //Check for verify state
+        if (CL.currentUser != nil) {
+            CL.currentUser.hasVerifiedVideoWithBlock(cell.video) { (verified, error) -> () in
+                if (verified) {
+                    cell.verifyButton.setImage(UIImage(named: "icon_like_1"), forState: .Normal);
+                } else {
+                    cell.verifyButton.setImage(UIImage(named: "icon_like_0"), forState: .Normal);
+                }
+            }
+        } else {
+            //∂
+        }
+        
+        if let owner = video.owner {
+            if let img = owner.profileImage {
+                cell.imageActivityIndicator.startAnimating();
+                cell.userProfileImage.sd_setImageWithURL(NSURL(string: img.url), placeholderImage: UIImage(named: "default_profile")) { (image, error, cacheType, url) -> Void in
+                    if let e = error {
+                        NSLog("set profile image error");
+                        CL.showError(e);
+                    } else {
+                        NSLog("profile image set successful");
+                    }
+                    cell.imageActivityIndicator.stopAnimating();
+                }
+            }
+        }
+        
+        //Set the video data
+        cell.likeButton.setTitle(" \(cell.video.numberOfVerify) likes", forState: .Normal);
+        cell.commentButton.setTitle(" \(cell.video.numberOfComment) comment", forState: .Normal);
+        cell.shareButton.setTitle(" \(cell.video.numberOfView) View", forState: .Normal);
+        
+        //Increment number of views, since it's been viewed
+        cell.video.incrementKey("numberOfView");
+        cell.video.saveEventually();
         
         return cell;
         
@@ -430,18 +481,21 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
             self.videoNotificationUnregister(tempCell);
         }
         
-        var indexPaths = self.tableView.indexPathsForVisibleRows;
+        let indexPaths = self.tableView.indexPathsForVisibleRows;
         
         for path in indexPaths! {
-            var cell = self.tableView.cellForRowAtIndexPath(path) as? HomeVideoTableViewCell;
-            
-            //nil check here is IMPORTANT, videoPlayer initialization is a async process and it is possible to product nil when initializing
-            if (cell?.videoPlayer != nil) {
-                cell?.videoPlayer.pause();
-                //NSLog("display thumbnail, hide player when scrolling)");
-                cell?.avLayer.hidden = true;
-                cell?.activityIndicator.startAnimating();
+            if let cell = self.tableView.cellForRowAtIndexPath(path) as? HomeVideoTableViewCell {
+                //nil check here is IMPORTANT, videoPlayer initialization is a async process and it is possible to product nil when initializing
+                if (cell.videoPlayer != nil) {
+                    cell.videoPlayer.pause();
+                    self.playerArray[path.row] = cell.videoPlayer;
+                    //NSLog("display thumbnail, hide player when scrolling)");
+                    cell.avLayer.hidden = true;
+                    cell.activityIndicator.startAnimating();
+                }
             }
+            
+            
         }
     }
     

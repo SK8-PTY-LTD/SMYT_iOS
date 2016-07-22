@@ -43,7 +43,7 @@ class HomeVideoTableViewCell: UITableViewCell {
     var delegate: HomeVideoTableViewCellProtocol?
     
     var videoPlayer: AVPlayer!
-    var avLayer: AVPlayerLayer!
+    var avLayer : AVPlayerLayer!;
     
     required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)!
@@ -116,90 +116,10 @@ class HomeVideoTableViewCell: UITableViewCell {
     public func customInitialize() {
         
         //Play item
-        if let _ = self.avLayer {
-            //Cell already initialized
-        } else {
-            //Initialize cell
-            CL.stampTime();
-            let urlString = self.video.file?.url!;
-            var url = NSURL(string: urlString!)!;
-            let asset = AVURLAsset(URL: url);
-            var videoItem = AVPlayerItem(asset: asset);
-            //Initialize player
-            //videoItem.
-            self.videoPlayer = AVPlayer(playerItem: videoItem);
-            self.videoPlayer.actionAtItemEnd = .None;
-            CL.logWithTimeStamp("Cell Intialized");
-            //Insert layer
-            self.avLayer = AVPlayerLayer(player: self.videoPlayer);
-            let width = UIScreen.mainScreen().bounds.width;
-            self.avLayer.frame = CGRectMake(0, 0, width, width);
-            self.videoThumbnailView.layer.addSublayer(self.avLayer);
-            self.videoThumbnailView.clipsToBounds = true;
-            //Add tap gesture
-            let tap0 = UITapGestureRecognizer(target: self, action: Selector("handleVideoTap"));
-            tap0.delegate = self;
-            self.videoThumbnailView.addGestureRecognizer(tap0);
-            
-            let tap1 = UITapGestureRecognizer(target: self, action: Selector("handleUserTap"));
-            tap1.delegate = self;
-            self.userProfileImage.addGestureRecognizer(tap1);
-            self.userProfileName.addGestureRecognizer(tap1);
-        }
+        //Initialize cell
+        //Initialize player
+        //Insert layer
         
-        //Autoplay the first item
-        if shoulldInitiallyPlay {
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoLoop", name:AVPlayerItemDidPlayToEndTimeNotification, object: self.videoPlayer!.currentItem);
-            self.avLayer.hidden = false;
-            self.videoPlayer.play();
-            NSLog("showing video hiding thumbnail for initial play");
-        }
-        
-        self.userProfileName.text = video.owner?.profileName;
-        self.captionTextView.text = video.caption;
-        //self.captionTextView.sizeToFit();
-        //self.challengeLabel.text = video.challenge?.name;
-        
-        //Setting time
-        //self.videoUploadTimeLabel.text = self.video.createdAt.formattedAsTimeAgo();
-        
-        //Check for verify state
-        if (CL.currentUser != nil) {
-            CL.currentUser.hasVerifiedVideoWithBlock(self.video) { (verified, error) -> () in
-                if (verified) {
-                    self.verifyButton.setImage(UIImage(named: "icon_like_1"), forState: .Normal);
-                } else {
-                    self.verifyButton.setImage(UIImage(named: "icon_like_0"), forState: .Normal);
-                }
-            }
-        } else {
-            //∂
-        }
-        
-        if let owner = video.owner {
-            if let img = owner.profileImage {
-                self.imageActivityIndicator.startAnimating();
-                self.userProfileImage.sd_setImageWithURL(NSURL(string: img.url), placeholderImage: UIImage(named: "default_profile")) { (image, error, cacheType, url) -> Void in
-                    if let e = error {
-                        NSLog("set profile image error");
-                        CL.showError(e);
-                    } else {
-                        NSLog("profile image set successful");
-                    }
-                    self.imageActivityIndicator.stopAnimating();
-                }
-            }
-        }
-        
-        
-        //Set the video data
-        self.likeButton.setTitle(" \(self.video.numberOfVerify) likes", forState: .Normal);
-        self.commentButton.setTitle(" \(self.video.numberOfComment) comment", forState: .Normal);
-        self.shareButton.setTitle(" \(self.video.numberOfView) View", forState: .Normal);
-        
-        //Increment number of views, since it's been viewed
-        self.video.incrementKey("numberOfView");
-        self.video.saveEventually();
     }
     
     func videoLoop() {
@@ -214,6 +134,7 @@ class HomeVideoTableViewCell: UITableViewCell {
             self.videoPlayer.play();
         } else {
             self.videoPlayer.pause();
+            
         }
     }
     

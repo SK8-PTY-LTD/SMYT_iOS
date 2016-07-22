@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15F89A22044354F8E1D14BC0 /* Pods_Smyt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0941FD9C109A68E4BC7B53 /* Pods_Smyt.framework */; };
 		294E7F801D1A7499009C8906 /* KittenSwash.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 294E7F7F1D1A7499009C8906 /* KittenSwash.ttf */; };
 		29CA37F21CD9C96200F74E65 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CA37F01CD9C96200F74E65 /* Category.storyboard */; };
 		29CA37F41CD9CB3200F74E65 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CA37F31CD9CB3200F74E65 /* CategoryViewController.swift */; };
@@ -80,6 +79,7 @@
 		3CD134B81C0D8E0F0096B3DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134B71C0D8E0F0096B3DB /* UIKit.framework */; };
 		3CD134BA1C0D8E1E0096B3DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134B91C0D8E1E0096B3DB /* Foundation.framework */; };
 		3CD134BC1C0D8E250096B3DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD134BB1C0D8E250096B3DB /* CoreGraphics.framework */; };
+		A25DF9E2D5908C23B4E4D438 /* Pods_Smyt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932E61DEFDBC954332B80B2C /* Pods_Smyt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19C8AFC1E5E1C2829992412B /* Pods-Challenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.debug.xcconfig"; sourceTree = "<group>"; };
+		23A3593C5470FFE2AB565008 /* Pods-Smyt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smyt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smyt/Pods-Smyt.release.xcconfig"; sourceTree = "<group>"; };
 		294E7F7F1D1A7499009C8906 /* KittenSwash.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KittenSwash.ttf; sourceTree = "<group>"; };
 		29B4B1ED1CD9820900DCAE61 /* Smyt-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Smyt-Bridging-Header.h"; sourceTree = "<group>"; };
 		29CA37F11CD9C96200F74E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
@@ -180,11 +180,8 @@
 		3CD134B71C0D8E0F0096B3DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3CD134B91C0D8E1E0096B3DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3CD134BB1C0D8E250096B3DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		40C8CCA9C9CAF4FC72D9D8E1 /* Pods-Smyt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smyt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smyt/Pods-Smyt.debug.xcconfig"; sourceTree = "<group>"; };
-		4108CC9062F8423B14D951A4 /* Pods_Challenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		481269CC007C59179F89EBCD /* Pods-Challenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.release.xcconfig"; sourceTree = "<group>"; };
-		5B0941FD9C109A68E4BC7B53 /* Pods_Smyt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smyt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA82842C7A5A430EE1C86307 /* Pods-Smyt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smyt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smyt/Pods-Smyt.release.xcconfig"; sourceTree = "<group>"; };
+		932E61DEFDBC954332B80B2C /* Pods_Smyt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smyt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57DE01438CD5BFDF7BA3D59 /* Pods-Smyt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smyt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smyt/Pods-Smyt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +215,7 @@
 				3CD134B81C0D8E0F0096B3DB /* UIKit.framework in Frameworks */,
 				3CD134B61C0D8E060096B3DB /* CoreMedia.framework in Frameworks */,
 				3CD134B41C0D8DFC0096B3DB /* QuartzCore.framework in Frameworks */,
-				15F89A22044354F8E1D14BC0 /* Pods_Smyt.framework in Frameworks */,
+				A25DF9E2D5908C23B4E4D438 /* Pods_Smyt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +237,7 @@
 				3CD134B51C0D8E060096B3DB /* CoreMedia.framework */,
 				3CD134B31C0D8DFC0096B3DB /* QuartzCore.framework */,
 				3CD134B11C0D8DF30096B3DB /* AVFoundation.framework */,
-				4108CC9062F8423B14D951A4 /* Pods_Challenger.framework */,
-				5B0941FD9C109A68E4BC7B53 /* Pods_Smyt.framework */,
+				932E61DEFDBC954332B80B2C /* Pods_Smyt.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,8 +374,8 @@
 				29E1A5821CD977460028A472 /* SmytTests */,
 				29E1A5901CD9775F0028A472 /* SmytUITests */,
 				3C3A5CD81C0D8383003B94A3 /* Products */,
-				932D09DA967A6233452E0C94 /* Pods */,
 				03A28CB192AE64492541F7C6 /* Frameworks */,
+				5AC84BBD0013136577114823 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -393,13 +389,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		932D09DA967A6233452E0C94 /* Pods */ = {
+		5AC84BBD0013136577114823 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				19C8AFC1E5E1C2829992412B /* Pods-Challenger.debug.xcconfig */,
-				481269CC007C59179F89EBCD /* Pods-Challenger.release.xcconfig */,
-				40C8CCA9C9CAF4FC72D9D8E1 /* Pods-Smyt.debug.xcconfig */,
-				BA82842C7A5A430EE1C86307 /* Pods-Smyt.release.xcconfig */,
+				A57DE01438CD5BFDF7BA3D59 /* Pods-Smyt.debug.xcconfig */,
+				23A3593C5470FFE2AB565008 /* Pods-Smyt.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -447,12 +441,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C3A5CFF1C0D8383003B94A3 /* Build configuration list for PBXNativeTarget "Smyt" */;
 			buildPhases = (
-				A7D5E51C3FCCCAC6216317C2 /* Check Pods Manifest.lock */,
+				9DB7A10178F7C03B23D102AC /* [CP] Check Pods Manifest.lock */,
 				3C3A5CD31C0D8383003B94A3 /* Sources */,
 				3C3A5CD41C0D8383003B94A3 /* Frameworks */,
 				3C3A5CD51C0D8383003B94A3 /* Resources */,
-				3A7EA30BF07B2FC61E1FA9C2 /* Embed Pods Frameworks */,
-				AEF68B13123FD01268E280A6 /* Copy Pods Resources */,
+				6C4196C3A28DF8D4BF55503A /* [CP] Embed Pods Frameworks */,
+				50FE7DCD33EF08AC061E752F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -547,14 +541,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A7EA30BF07B2FC61E1FA9C2 /* Embed Pods Frameworks */ = {
+		50FE7DCD33EF08AC061E752F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smyt/Pods-Smyt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C4196C3A28DF8D4BF55503A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,34 +571,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smyt/Pods-Smyt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A7D5E51C3FCCCAC6216317C2 /* Check Pods Manifest.lock */ = {
+		9DB7A10178F7C03B23D102AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AEF68B13123FD01268E280A6 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smyt/Pods-Smyt-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -867,7 +861,7 @@
 		};
 		3C3A5D001C0D8383003B94A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40C8CCA9C9CAF4FC72D9D8E1 /* Pods-Smyt.debug.xcconfig */;
+			baseConfigurationReference = A57DE01438CD5BFDF7BA3D59 /* Pods-Smyt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -897,7 +891,7 @@
 		};
 		3C3A5D011C0D8383003B94A3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA82842C7A5A430EE1C86307 /* Pods-Smyt.release.xcconfig */;
+			baseConfigurationReference = 23A3593C5470FFE2AB565008 /* Pods-Smyt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
