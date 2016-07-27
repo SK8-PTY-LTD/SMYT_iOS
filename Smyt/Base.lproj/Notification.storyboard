@@ -202,7 +202,7 @@
                                                                 <action selector="verifyButtonClicked:" destination="CTN-8x-ZBy" eventType="touchUpInside" id="66F-kS-zih"/>
                                                             </connections>
                                                         </button>
-                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-8p-8yi">
+                                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-8p-8yi">
                                                             <rect key="frame" x="30" y="20" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                     </subviews>

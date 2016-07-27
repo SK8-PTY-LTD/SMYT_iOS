@@ -14,7 +14,6 @@ import MessageUI
 
 protocol HomeVideoTableViewCellProtocol {
     func presentViewController(VC: UIViewController);
-//    func verifyButtonClicked(video: CLVideo);
     func commentButtonClicked(video: CLVideo);
     func goToProfile(user: CLUser);
     func shareButtonClicked(video: CLVideo);
@@ -106,20 +105,6 @@ class HomeVideoTableViewCell: UITableViewCell {
     
     @IBAction func moreButtonClicked(sender: AnyObject) {
         self.delegate?.moreButtonClicked(self.video);
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews();
-        self.performSelector("customInitialize");
-    }
-    
-    public func customInitialize() {
-        
-        //Play item
-        //Initialize cell
-        //Initialize player
-        //Insert layer
-        
     }
     
     func videoLoop() {

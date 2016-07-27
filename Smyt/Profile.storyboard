@@ -349,7 +349,7 @@
                                                                 <action selector="verifyButtonClicked:" destination="Yrt-6K-fTU" eventType="touchUpInside" id="dpg-a1-fzt"/>
                                                             </connections>
                                                         </button>
-                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Aw2-KS-wZ7">
+                                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Aw2-KS-wZ7">
                                                             <rect key="frame" x="30" y="20" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                     </subviews>

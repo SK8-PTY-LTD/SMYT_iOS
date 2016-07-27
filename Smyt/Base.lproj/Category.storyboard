@@ -296,7 +296,7 @@
                                                                 <action selector="verifyButtonClicked:" destination="ZnH-X5-DHm" eventType="touchUpInside" id="P2a-5O-oe7"/>
                                                             </connections>
                                                         </button>
-                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ebH-9K-mYa">
+                                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ebH-9K-mYa">
                                                             <rect key="frame" x="30" y="20" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                     </subviews>
