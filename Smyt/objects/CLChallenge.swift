@@ -23,7 +23,7 @@ public class CLChallenge : AVObject, AVSubclassing {
     
     public init(challengeId: String) {
         super.init();
-        self.objectId = challengeId;
+//        self.objectId = challengeId;
     }
     
     public init(name: String, requirement: String, numberOfVerifyRequired: Int) {

@@ -23,7 +23,7 @@ public class CLComment : AVObject, AVSubclassing {
     
     public init(commentId: String) {
         super.init();
-        self.objectId = commentId;
+//        self.objectId = commentId;
     }
     
     public init(sender: CLUser, video: CLVideo, text: String) {

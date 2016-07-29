@@ -3,7 +3,7 @@ use_frameworks!
 
 target 'Smyt' do
 
-  pod 'AVOSCloud'
+  pod 'AVOSCloud' , '3.3.5'
   pod 'AFDateHelper'
   pod 'ICGVideoTrimmer'
   pod 'ICViewPager'

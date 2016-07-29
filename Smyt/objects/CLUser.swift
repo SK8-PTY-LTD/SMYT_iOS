@@ -27,7 +27,7 @@ public class CLUser : AVUser {
     
     init(userId: String) {
         super.init();
-        self.objectId = userId;
+//        self.objectId = userId;
     }
     
     init(email: String, password: String, profileName: String) {

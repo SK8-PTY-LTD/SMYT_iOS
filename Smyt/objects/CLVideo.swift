@@ -23,7 +23,7 @@ public class CLVideo : AVObject, AVSubclassing {
     
     public init(videoId: String) {
         super.init();
-        self.objectId = videoId;
+//        self.objectId = videoId;
     }
     
     public init(file: AVFile) {

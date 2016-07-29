@@ -23,7 +23,7 @@ class CLPush : AVObject, AVSubclassing {
     
     init(pushId: String) {
         super.init();
-        self.objectId = pushId;
+//        self.objectId = pushId;
     }
     
     init(message: String, user: CLUser, video: CLVideo?) {

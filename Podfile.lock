@@ -1,7 +1,7 @@
 PODS:
   - AFDateHelper (3.1.1)
   - APParallaxHeader (0.1.6)
-  - AVOSCloud (3.2.7)
+  - AVOSCloud (3.3.5)
   - Bolts (1.6.0):
     - Bolts/AppLinks (= 1.6.0)
     - Bolts/Tasks (= 1.6.0)
@@ -31,7 +31,7 @@ PODS:
 DEPENDENCIES:
   - AFDateHelper
   - APParallaxHeader
-  - AVOSCloud
+  - AVOSCloud (= 3.3.5)
   - CSStickyHeaderFlowLayout
   - FBSDKCoreKit
   - FBSDKLoginKit
@@ -50,7 +50,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFDateHelper: 22d6439a3529a144c89b7e6aa214ebbe4d5c2337
   APParallaxHeader: 854bc48a2487ca12c702f8a236fec0d89cdac5c3
-  AVOSCloud: 957d1508104d7c8ed501df9d9b734d7a98c2e047
+  AVOSCloud: 1fe170768bee7e05bc3ea86e38d5bddb105cb957
   Bolts: f52a250053bb517ca874523c3913776359ab3def
   CSStickyHeaderFlowLayout: 5366582779d8b7c9ba9b9cc729c218cc23888776
   FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
@@ -67,6 +67,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: af18f8e73e68c2eee3322b96819c7bc650a23f56
+PODFILE CHECKSUM: d5a17490a85962facc93f4ff0ea8dd6331233215
 
 COCOAPODS: 1.0.1
