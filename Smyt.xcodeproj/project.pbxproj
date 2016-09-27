@@ -269,6 +269,7 @@
 		29E1A5021CD975050028A472 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29E1A50C1CD975050028A472 /* HomeVideoViewController.swift */,
 				29E1A50D1CD975050028A472 /* LandingViewController.swift */,
 				29E1A5121CD975050028A472 /* SignupViewController.swift */,
 				29E1A50E1CD975050028A472 /* LoginViewController.swift */,
@@ -279,7 +280,6 @@
 				29E1A5091CD975050028A472 /* FindFriendsViewController.swift */,
 				29E1A50A1CD975050028A472 /* FollowingTableTableViewController.swift */,
 				29E1A50B1CD975050028A472 /* FriendsPagingViewController.swift */,
-				29E1A50C1CD975050028A472 /* HomeVideoViewController.swift */,
 				29E1A50F1CD975050028A472 /* NotificationTableViewController.swift */,
 				29E1A5101CD975050028A472 /* ProfileViewController.swift */,
 				29E1A5131CD975050028A472 /* TabViewController.swift */,
@@ -333,12 +333,12 @@
 		29E1A5291CD975050028A472 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				29E1A52F1CD975050028A472 /* HomeVideoTableViewCell.swift */,
 				29E1A52A1CD975050028A472 /* AVImageView.swift */,
 				29E1A52B1CD975050028A472 /* CommentTableViewCell.swift */,
 				29E1A52C1CD975050028A472 /* EditProfileTableViewCell.swift */,
 				29E1A52D1CD975050028A472 /* FollowingTableViewCell.swift */,
 				29E1A52E1CD975050028A472 /* FriendTableViewCell.swift */,
-				29E1A52F1CD975050028A472 /* HomeVideoTableViewCell.swift */,
 				29E1A5301CD975050028A472 /* LevelCollectionViewCell.swift */,
 				29E1A5311CD975050028A472 /* NotificationTableViewCell.swift */,
 				29E1A5321CD975050028A472 /* ProfileCustomHeaderView.swift */,
@@ -477,7 +477,7 @@
 					};
 					3C3A5CD61C0D8383003B94A3 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = W26JRPAC63;
+						DevelopmentTeam = 4D44DZ7343;
 					};
 				};
 			};
@@ -881,9 +881,9 @@
 					"\"${PODS_ROOT}/Headers/Public/AVOSCloud\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Smyt/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.wwww;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smyt/Smyt-Bridging-Header.h";
@@ -911,9 +911,9 @@
 					"\"${PODS_ROOT}/Headers/Public/AVOSCloud\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Smyt/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.wwww;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smyt/Smyt-Bridging-Header.h";

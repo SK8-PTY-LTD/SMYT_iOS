@@ -41,8 +41,8 @@ class HomeVideoTableViewCell: UITableViewCell {
     var shoulldInitiallyPlay = false;
     var delegate: HomeVideoTableViewCellProtocol?
     
-    var videoPlayer: AVPlayer!
-    var avLayer : AVPlayerLayer!;
+    var videoPlayer: AVPlayer?
+    var avLayer : AVPlayerLayer!
     
     required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)!
@@ -110,19 +110,46 @@ class HomeVideoTableViewCell: UITableViewCell {
     func videoLoop() {
         self.videoPlayer?.currentItem?.seekToTime(kCMTimeZero);
         self.avLayer.hidden = false;
-        self.videoPlayer.play();
+        self.videoPlayer!.play();
     }
     
+//    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+//        if context == ItemStatusContext {
+//            print(change)
+//        }
+//        super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+//        return
+//    }
+    let ItemStatusContext: UnsafeMutablePointer<Void> = nil
     func handleVideoTap() {
-        if (self.videoPlayer.rate == 0.0) {
-            self.avLayer.hidden = false;
-            self.videoPlayer.play();
-        } else {
-            self.videoPlayer.pause();
+        print("tapped!")
+        print(self.video)
+        print(self.videoPlayer)
+        if (self.videoPlayer!.rate == 0.0) {
             
+//            videoPlayer.currentItem?.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.Initial, context: ItemStatusContext)
+//            self.videoPlayer
+            self.avLayer.hidden = false;
+            self.videoPlayer!.play();
+//            print(videoPlayer.error)
+            print(videoPlayer!.currentItem?.status)
+//            print(avLayer)
+            print("play!")
+//            print(avLayer.hidden)
+//            print(video.file?.url)
+            print(videoPlayer!.currentItem)
+            
+        } else {
+            self.videoPlayer!.pause();
+//            print(videoPlayer.error)
+            print(videoPlayer!.currentItem?.status)
+//            print(avLayer.hidden)
+//            print(video.file?.url)
+            print("pause!!")
+            print(videoPlayer!.currentItem)
         }
     }
-    
+
     func handleUserTap() {
         self.delegate?.goToProfile(self.video.owner!);
     }

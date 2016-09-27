@@ -44,7 +44,7 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     let numberOfVideoPreloadRequired = 1;
     let isThumbnailShowing = true;
     var isLoadingContinuously = true;
-    let isVideoCaching = true;
+    let isVideoCaching = false;
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -319,6 +319,8 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //Check for load more button
@@ -337,6 +339,14 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         cell.delegate = self;
         //Get corresponding video
         
+//        cell.video = nil
+        if (cell.avLayer != nil) {
+            cell.avLayer.removeFromSuperlayer()
+            cell.avLayer = nil
+            cell.videoPlayer = nil
+        }
+        
+
         //The following settings is only applied for non-initial cell
         let video = self.videoArray[indexPath.row];
         cell.video = video;
@@ -408,7 +418,7 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         if shoulldInitiallyPlay {
             NSNotificationCenter.defaultCenter().addObserver(cell, selector: "videoLoop", name:AVPlayerItemDidPlayToEndTimeNotification, object: cell.videoPlayer!.currentItem);
             cell.avLayer.hidden = false;
-            cell.videoPlayer.play();
+            cell.videoPlayer!.play();
             NSLog("showing video hiding thumbnail for initial play");
         }
         
@@ -464,6 +474,7 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         //Check if should load mor video for continuous loading
         NSLog("Will display cell \(indexPath.row)");
+
         //Note, do not reload for cell 0, as it's the initial cell
         if (self.isLoadingContinuously && indexPath.row != 0) {
             if (self.videoArray.count - indexPath.row == self.numberOfVideoPreloadRequired) {
@@ -487,8 +498,8 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
             if let cell = self.tableView.cellForRowAtIndexPath(path) as? HomeVideoTableViewCell {
                 //nil check here is IMPORTANT, videoPlayer initialization is a async process and it is possible to product nil when initializing
                 if (cell.videoPlayer != nil) {
-                    cell.videoPlayer.pause();
-                    self.playerArray[path.row] = cell.videoPlayer;
+                    cell.videoPlayer!.pause();
+                    self.playerArray[path.row] = cell.videoPlayer!;
                     //NSLog("display thumbnail, hide player when scrolling)");
                     cell.avLayer.hidden = true;
                     cell.activityIndicator.startAnimating();
@@ -527,7 +538,7 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     //Case 1. Use DidEndDragging to play current item
     //Case 2. Use DidEndDecelerating to wait, and then to play current item
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
+        print(decelerate)
         if (!decelerate){
             self.playCurrentVideo();
         }
@@ -535,7 +546,7 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        
+        print("EndDecelerating!")
         self.playCurrentVideo();
     }
     
@@ -544,18 +555,26 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         
 //        CL.stampTime();
         if (self.refreshControl.hidden && self.videoArray.count != 0) {
+
             let indexPaths = self.tableView.indexPathsForVisibleRows;
             
             //Setting the video and play
             self.currentCell = self.getMostVisibleCell(indexPaths);
             
-            self.currentCell.videoPlayer.play();
+//            print(currentCell.)
+            self.currentCell.videoPlayer!.play();
+            print(self.currentCell.videoPlayer!.error)
+            
             self.currentCell.activityIndicator.stopAnimating();
             self.currentCell.avLayer.hidden = false;
-            
+            self.currentCell.shoulldInitiallyPlay = true
             self.videoNotificationRegister(self.currentCell);
             
-//            CL.logWithTimeStamp("Video start playing");
+            CL.logWithTimeStamp("Video start playing");
+            print(videoArray.count)
+            print(self.currentCell.avLayer.hidden)
+            print(indexPaths)
+            print(currentCell.shoulldInitiallyPlay)
         } else {
             NSLog("Video array is empty");
         }
@@ -691,5 +710,10 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
             break
         }
         controller.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        print("memory!!")
     }
 }
