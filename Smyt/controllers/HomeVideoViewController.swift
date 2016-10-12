@@ -538,7 +538,6 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     //Case 1. Use DidEndDragging to play current item
     //Case 2. Use DidEndDecelerating to wait, and then to play current item
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        print(decelerate)
         if (!decelerate){
             self.playCurrentVideo();
         }
@@ -546,7 +545,6 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        print("EndDecelerating!")
         self.playCurrentVideo();
     }
     
@@ -563,7 +561,6 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
             
 //            print(currentCell.)
             self.currentCell.videoPlayer!.play();
-            print(self.currentCell.videoPlayer!.error)
             
             self.currentCell.activityIndicator.stopAnimating();
             self.currentCell.avLayer.hidden = false;
@@ -571,10 +568,7 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
             self.videoNotificationRegister(self.currentCell);
             
             CL.logWithTimeStamp("Video start playing");
-            print(videoArray.count)
-            print(self.currentCell.avLayer.hidden)
-            print(indexPaths)
-            print(currentCell.shoulldInitiallyPlay)
+
         } else {
             NSLog("Video array is empty");
         }
@@ -711,9 +705,5 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         }
         controller.dismissViewControllerAnimated(true, completion: nil);
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        print("memory!!")
-    }
+
 }

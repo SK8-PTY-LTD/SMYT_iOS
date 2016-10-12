@@ -112,41 +112,19 @@ class HomeVideoTableViewCell: UITableViewCell {
         self.avLayer.hidden = false;
         self.videoPlayer!.play();
     }
-    
-//    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-//        if context == ItemStatusContext {
-//            print(change)
-//        }
-//        super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-//        return
-//    }
+
     let ItemStatusContext: UnsafeMutablePointer<Void> = nil
     func handleVideoTap() {
         print("tapped!")
         print(self.video)
         print(self.videoPlayer)
         if (self.videoPlayer!.rate == 0.0) {
-            
-//            videoPlayer.currentItem?.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.Initial, context: ItemStatusContext)
-//            self.videoPlayer
+
             self.avLayer.hidden = false;
             self.videoPlayer!.play();
-//            print(videoPlayer.error)
-            print(videoPlayer!.currentItem?.status)
-//            print(avLayer)
-            print("play!")
-//            print(avLayer.hidden)
-//            print(video.file?.url)
-            print(videoPlayer!.currentItem)
             
         } else {
             self.videoPlayer!.pause();
-//            print(videoPlayer.error)
-            print(videoPlayer!.currentItem?.status)
-//            print(avLayer.hidden)
-//            print(video.file?.url)
-            print("pause!!")
-            print(videoPlayer!.currentItem)
         }
     }
 
