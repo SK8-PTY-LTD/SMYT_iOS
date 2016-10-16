@@ -1,5 +1,5 @@
 PODS:
-  - AFDateHelper (3.1.1)
+  - AFDateHelper (3.4.2)
   - APParallaxHeader (0.1.6)
   - AVOSCloud (3.3.5)
   - Bolts (1.6.0):
@@ -15,7 +15,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.10.1):
     - FBSDKCoreKit
-  - FontAwesome.swift (0.7.1)
+  - FontAwesome.swift (0.9.0)
   - ICGVideoTrimmer (1.1)
   - ICViewPager (1.5.1)
   - NSDate-Time-Ago (1.0.1)
@@ -29,7 +29,7 @@ PODS:
   - TTTAttributedLabel (1.13.4)
 
 DEPENDENCIES:
-  - AFDateHelper
+  - AFDateHelper (= 3.4.2)
   - APParallaxHeader
   - AVOSCloud (= 3.3.5)
   - CSStickyHeaderFlowLayout
@@ -48,7 +48,7 @@ DEPENDENCIES:
   - TTTAttributedLabel
 
 SPEC CHECKSUMS:
-  AFDateHelper: 22d6439a3529a144c89b7e6aa214ebbe4d5c2337
+  AFDateHelper: aecee6bb264d6531795649f4ebac47783d2bab74
   APParallaxHeader: 854bc48a2487ca12c702f8a236fec0d89cdac5c3
   AVOSCloud: 1fe170768bee7e05bc3ea86e38d5bddb105cb957
   Bolts: f52a250053bb517ca874523c3913776359ab3def
@@ -56,7 +56,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
   FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
   FBSDKShareKit: 2fd887cce0056bdda91f99b2021d724a4fed8e88
-  FontAwesome.swift: 21ec9db57af8b92d4b4d6ca8208b9ae07031e828
+  FontAwesome.swift: 8744c24147e925c61e68d313a2837c7298e2a43f
   ICGVideoTrimmer: 1f54de0595af56af2a406f20cdb33c1c440d15cd
   ICViewPager: 032dc71a50fe898e185fae6112ded4bed0e0523c
   NSDate-Time-Ago: e9de167d0659ebe465c273e833e7b582f061fc41
@@ -67,6 +67,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: d5a17490a85962facc93f4ff0ea8dd6331233215
+PODFILE CHECKSUM: 9a0461bee03ca5b595379934525ef465cd4f43b3
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.3

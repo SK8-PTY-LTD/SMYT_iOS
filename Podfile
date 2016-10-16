@@ -1,10 +1,10 @@
-platform :ios, '8.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'Smyt' do
 
-  pod 'AVOSCloud' , '3.3.5'
-  pod 'AFDateHelper'
+  pod 'AVOSCloud', '3.3.5'
+  pod 'AFDateHelper', '3.4.2'
   pod 'ICGVideoTrimmer'
   pod 'ICViewPager'
   pod 'TPKeyboardAvoiding'

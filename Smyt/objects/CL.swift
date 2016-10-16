@@ -17,9 +17,9 @@ extension UIImage {
             self.drawInRect(rect)
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
-            let imageData = UIImageJPEGRepresentation(newImage, 0.5)
+            let imageData = UIImageJPEGRepresentation(newImage!, 0.5)
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completionHandler(resizedImage: newImage, data:imageData!)
+                completionHandler(resizedImage: newImage!, data:imageData!)
             })
         })
     }
@@ -102,7 +102,7 @@ public extension UIView {
             name = nibName
         }
         let nibViews = NSBundle.mainBundle().loadNibNamed(name, owner: nil, options: nil)
-        for v in nibViews {
+        for v in nibViews! {
             if let tog = v as? T {
                 view = tog
             }

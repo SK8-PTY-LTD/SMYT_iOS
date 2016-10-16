@@ -692,14 +692,14 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         switch result.rawValue {
-        case MFMailComposeResultCancelled.rawValue:
-            print("Cancelled");
-        case MFMailComposeResultSaved.rawValue:
-            print("Saved");
-        case MFMailComposeResultSent.rawValue:
-            print("Sent");
-        case MFMailComposeResultFailed.rawValue:
-            print("Error: \(error?.localizedDescription)");
+//        case MFMailComposeResultCancelled.rawValue:
+//            print("Cancelled");
+//        case MFMailComposeResultSaved.rawValue:
+//            print("Saved");
+//        case MFMailComposeResultSent.rawValue:
+//            print("Sent");
+//        case MFMailComposeResultFailed.rawValue:
+//            print("Error: \(error?.localizedDescription)");
         default:
             break
         }

@@ -73,15 +73,15 @@ class FindFriendsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
-        if (result == MessageComposeResultCancelled){
-            NSLog("Message cancelled");
-        }
-        else if (result == MessageComposeResultSent){
-            NSLog("Message sent");
-        }
-        else{
-            NSLog("Message failed");
-        }
+//        if (result == MessageComposeResultCancelled){
+//            NSLog("Message cancelled");
+//        }
+//        else if (result == MessageComposeResultSent){
+//            NSLog("Message sent");
+//        }
+//        else{
+//            NSLog("Message failed");
+//        }
         controller.dismissViewControllerAnimated(true, completion: { () -> Void in
             
         });
