@@ -41,8 +41,8 @@ class HomeVideoTableViewCell: UITableViewCell {
     var shoulldInitiallyPlay = false;
     var delegate: HomeVideoTableViewCellProtocol?
     
-    var videoPlayer: AVPlayer!
-    var avLayer : AVPlayerLayer!;
+    var videoPlayer: AVPlayer?
+    var avLayer : AVPlayerLayer!
     
     required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)!
@@ -110,19 +110,24 @@ class HomeVideoTableViewCell: UITableViewCell {
     func videoLoop() {
         self.videoPlayer?.currentItem?.seekToTime(kCMTimeZero);
         self.avLayer.hidden = false;
-        self.videoPlayer.play();
+        self.videoPlayer!.play();
     }
-    
+
+    let ItemStatusContext: UnsafeMutablePointer<Void> = nil
     func handleVideoTap() {
-        if (self.videoPlayer.rate == 0.0) {
+        print("tapped!")
+        print(self.video)
+        print(self.videoPlayer)
+        if (self.videoPlayer!.rate == 0.0) {
+
             self.avLayer.hidden = false;
-            self.videoPlayer.play();
-        } else {
-            self.videoPlayer.pause();
+            self.videoPlayer!.play();
             
+        } else {
+            self.videoPlayer!.pause();
         }
     }
-    
+
     func handleUserTap() {
         self.delegate?.goToProfile(self.video.owner!);
     }

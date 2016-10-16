@@ -345,7 +345,7 @@ class ViewProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if shoulldInitiallyPlay {
             NSNotificationCenter.defaultCenter().addObserver(cell, selector: "videoLoop", name:AVPlayerItemDidPlayToEndTimeNotification, object: cell.videoPlayer!.currentItem);
             cell.avLayer.hidden = false;
-            cell.videoPlayer.play();
+            cell.videoPlayer!.play();
             NSLog("showing video hiding thumbnail for initial play");
         }
         
@@ -422,8 +422,8 @@ class ViewProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 if let cell = self.tableView.cellForRowAtIndexPath(path) as? HomeVideoTableViewCell {
                     //nil check here is IMPORTANT, videoPlayer initialization is a async process and it is possible to product nil when initializing
                     if (cell.videoPlayer != nil) {
-                        cell.videoPlayer.pause();
-                        self.playerArray[path.row] = cell.videoPlayer;
+                        cell.videoPlayer!.pause();
+                        self.playerArray[path.row] = cell.videoPlayer!;
                         //NSLog("display thumbnail, hide player when scrolling)");
                         cell.avLayer.hidden = true;
                         cell.activityIndicator.startAnimating();
@@ -481,7 +481,7 @@ class ViewProfileViewController: UIViewController, UITableViewDelegate, UITableV
             //Setting the video and play
             self.currentCell = self.getMostVisibleCell(indexPaths);
             
-            self.currentCell.videoPlayer.play();
+            self.currentCell.videoPlayer!.play();
             self.currentCell.activityIndicator.stopAnimating();
             self.currentCell.avLayer.hidden = false;
             
