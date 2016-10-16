@@ -477,7 +477,7 @@
 					};
 					3C3A5CD61C0D8383003B94A3 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 4D44DZ7343;
+						DevelopmentTeam = YJE74QXLCC;
 					};
 				};
 			};
@@ -883,7 +883,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Smyt/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.wwww;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smyt/Smyt-Bridging-Header.h";
@@ -913,7 +913,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Smyt/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.wwww;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smyt/Smyt-Bridging-Header.h";
