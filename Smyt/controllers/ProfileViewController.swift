@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true);
         NSLog("profile view appeared");
-        
+//        tableView.reloadData()
         if let user = CL.currentUser {
             self.initWithUser(user);
         } else {

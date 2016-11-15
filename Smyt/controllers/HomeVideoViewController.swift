@@ -57,7 +57,6 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         self.refreshControl.tintColor = UIColor.cyanColor();
         self.refreshControl.addTarget(self, action: Selector("refreshVideos"), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(self.refreshControl);
-        
         self.selectedSubmenuButton = self.tabNewButton;
         self.currentPage = 0;
         
@@ -86,13 +85,14 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         if (self.isLoadingMoreVideos == true){
             CL.promote("Please wait while loading videos....");
         } else if (self.selectedSubmenuButton != sender) {
-            
+            isLoadingMoreVideos = true
             self.selectedSubmenuButton = sender;
             self.refreshVideos();
         }
     }
     
     func refreshVideos() {
+        tableView.bounces = false
         self.currentPage = 0;
         self.videoArray = [CLVideo]();
 //        self.videoItemArray = [AVPlayerItem]();
@@ -103,10 +103,21 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         self.reloadVideos();
     }
     
+    func loadMoreVideos() {
+        if (self.isLoadingMoreVideos) {
+            return;
+        } else {
+            self.currentPage += 1;
+            self.isLoadingMoreVideos = true;
+            self.reloadVideos();
+            NSLog("Reloading video, page \(self.currentPage)");
+        }
+    }
+    
     func reloadVideos() {
         
         //CL.stampTime();
-        
+        tableView.bounces = false
         let query = CLVideo.query();
         query.whereKey("status", equalTo: CLVideo.STATUS.LISTING);
         query.cachePolicy = .NetworkElseCache;
@@ -173,6 +184,10 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                     
                     let video = downloadArray[i] as! CLVideo;
                     NSLog("videoArray insert video at index \(index) count \(self.videoArray.count)");
+                    print("********")
+                    print(self.videoArray.count)
+                    print(index)
+                    print(self.currentPage)
                     self.videoArray.insert(video, atIndex: index);
                     
                     //add an placeholder item to array, to be replaced by async task below. DO NOT REMOVE
@@ -185,7 +200,7 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
 //                    self.videoItemArray.insert(placeholderItem, atIndex: index);
                     self.playerArray.insert(AVPlayer(playerItem: placeholderItem), atIndex: index);
                     self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic);
-                    
+                        
                     //Cache video
                     if (self.isVideoCaching) {
                         
@@ -269,6 +284,13 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                                 } else {
 //                                    CL.logWithTimeStamp("Failed to cache video data \(urlString)");
                                 }
+                                
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    self.isLoadingMoreVideos = false;
+                                    self.refreshControl.endRefreshing();
+                                    self.tableView.bounces = true
+                                })
+
                             });
                         }
                     } else {
@@ -278,35 +300,37 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                             //Initialize pre-buffered videoItem
                             let videoItem = AVPlayerItem(asset: asset);
                             
+                            print(index)
+                            print(self.playerArray.count)
                             //Replace non-buffered playItem with newly pre-buffered playItem
-                            self.playerArray[index] = AVPlayer(playerItem: videoItem);
-//                            CL.logWithTimeStamp("URL video item loaded");
+                            if(index<self.playerArray.count){
+                                self.playerArray[index] = AVPlayer(playerItem: videoItem);
+                            }
+//                            self.playerArray[index] = AVPlayer(playerItem: videoItem);
+                            
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.isLoadingMoreVideos = false;
+                                self.refreshControl.endRefreshing();
+                                self.tableView.bounces = true
+                            })
                         });
                     }
                 }
                 
                 //End refershing
-                self.refreshControl.endRefreshing();
+                //END REFRESHING TOO SOON, BEFORE THE PLAYERARRAY IS FULLY POPULATED
+//                self.refreshControl.endRefreshing();
                 
                 if (self.currentPage == 0) {
                     self.tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated: true);
                 }
-                self.isLoadingMoreVideos = false;
+                
+                //SET TO FALSE TOO SOON, BEFORE THE PLAYERARRAY IS FULLY POPULATED
+//                self.isLoadingMoreVideos = false;
             }
         
         }
         
-    }
-    
-    func loadMoreVideos() {
-        if (self.isLoadingMoreVideos) {
-            return;
-        } else {
-            self.currentPage += 1;
-            self.isLoadingMoreVideos = true;
-            self.reloadVideos();
-            NSLog("Reloading video, page \(self.currentPage)");
-        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -13,6 +13,8 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import FBSDKShareKit
 
+let screenSize = UIScreen.mainScreen().bounds
+
 class EditProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, EditProfileImageProtocol {
     
     var profileImageButton: UIButton!;
@@ -132,7 +134,9 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBAction func doneButtonClicked(sender: AnyObject) {
         //Saving profile image
-        
+        let blocker = UIView(frame: CGRectMake(0,0,screenSize.width,screenSize.height))
+        blocker.backgroundColor = UIColor.clearColor()
+        UIApplication.sharedApplication().keyWindow?.addSubview(blocker)
         CL.currentUser.saveInBackgroundWithBlock { (success, error) -> Void in
             if let e = error {
                 CL.showError(e);
@@ -140,17 +144,22 @@ class EditProfileViewController: UIViewController, UITableViewDataSource, UITabl
                 CL.currentUser.setObject(self.emailTextField.text, forKey: "email");
                 CL.currentUser.setObject(self.profileNameTextField.text, forKey: "profileName");
                 CL.currentUser.setObject(self.profileNameTextField.text?.lowercaseString, forKey: "profileNameLowerCase");
-                
                 if let image = self.profileImageButton.backgroundImageForState(.Normal) {
-                    CL.currentUser.setProfileUIImage(image);
+                   CL.currentUser.profileImage = AVFile(data: UIImageJPEGRepresentation(image, 1.0))
                 }
-                CL.currentUser.saveInBackground();
-                
-                CL.promote("Profile has been updated.");
-                self.navigationController?.popViewControllerAnimated(true);
-                
+//                CL.currentUser.saveInBackground();
+                CL.currentUser.saveInBackgroundWithBlock({ (success, error) in
+
+                        CL.promote("Profile has been updated.");
+//                    NSNotificationCenter.defaultCenter().postNotificationName("UpdateProfilePic", object: self, userInfo: nil)
+                    blocker.removeFromSuperview()
+                        self.navigationController?.popViewControllerAnimated(true);
+                    
+                    
+//                    })
+                   
+                })
             }
-            
         }
     }
     
