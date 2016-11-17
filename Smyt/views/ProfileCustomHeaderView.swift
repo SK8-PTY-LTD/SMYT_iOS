@@ -36,6 +36,21 @@ class ProfileCustomHeaderView: UIView {
         NSBundle.mainBundle().loadNibNamed("ProfileCustomHeaderView", owner: self, options: nil);
         self.headerView.frame = UIScreen.mainScreen().bounds;
         self.addSubview(self.headerView);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateProfilePicture), name: "UpdateProfilePic", object: nil)
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func updateProfilePicture(){
+        self.profileImageView.sd_setImageWithURL(NSURL.init(string: (CL.currentUser.profileImage?.url)!)!, placeholderImage: UIImage(named: "default_profile"), options: .RetryFailed, progress: { (receive, expected) in
+            
+            }, completed: { (image, error, cacheType, url) in
+                let roundedImage = Toucan(image: image).maskWithEllipse().image;
+                self.profileImageView.image = roundedImage;
+                print(self.profileImageView.image)
+        })
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,10 +95,17 @@ class ProfileCustomHeaderView: UIView {
             }
             
             if let img = self.userToDisplay.profileImage {
-                self.profileImageView.sd_setImageWithURL(NSURL.init(string: img.url), placeholderImage: UIImage(named: "default_profile"), completed: { (image, error, cacheType, url) in
-                    let roundedImage = Toucan(image: image).maskWithEllipse().image;
-                    self.profileImageView.image = roundedImage;
+                self.profileImageView.image = UIImage(named: "default_profile")
+                self.profileImageView.sd_setImageWithURL(NSURL.init(string: img.url), placeholderImage: UIImage(named: "default_profile"), options: .RetryFailed, progress: { (receive, expected) in
+                    
+                    }, completed: { (image, error, cacheType, url) in
+                        let roundedImage = Toucan(image: image).maskWithEllipse().image;
+                        self.profileImageView.image = roundedImage;
                 })
+//                self.profileImageView.sd_setImageWithURL(NSURL.init(string: img.url), placeholderImage: UIImage(named: "default_profile"), completed: { (image, error, cacheType, url) in
+//                    let roundedImage = Toucan(image: image).maskWithEllipse().image;
+//                    self.profileImageView.image = roundedImage;
+//                })
                 
             } else {
                 self.profileImageView.image = UIImage(named: "default_profile");

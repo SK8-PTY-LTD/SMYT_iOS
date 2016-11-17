@@ -131,4 +131,5 @@ class HomeVideoTableViewCell: UITableViewCell {
     func handleUserTap() {
         self.delegate?.goToProfile(self.video.owner!);
     }
+
 }

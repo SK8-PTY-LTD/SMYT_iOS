@@ -276,12 +276,12 @@
 				29E1A5051CD975050028A472 /* ChangeBIOViewController.swift */,
 				29E1A5061CD975050028A472 /* ChangePasswordViewController.swift */,
 				29E1A5071CD975050028A472 /* CommentsViewController.swift */,
+				29E1A5101CD975050028A472 /* ProfileViewController.swift */,
 				29E1A5081CD975050028A472 /* EditProfileViewController.swift */,
 				29E1A5091CD975050028A472 /* FindFriendsViewController.swift */,
 				29E1A50A1CD975050028A472 /* FollowingTableTableViewController.swift */,
 				29E1A50B1CD975050028A472 /* FriendsPagingViewController.swift */,
 				29E1A50F1CD975050028A472 /* NotificationTableViewController.swift */,
-				29E1A5101CD975050028A472 /* ProfileViewController.swift */,
 				29E1A5131CD975050028A472 /* TabViewController.swift */,
 				29CA37F71CD9DEA200F74E65 /* PreUploadViewController.swift */,
 				29E1A5141CD975050028A472 /* VideoCaptureViewController.swift */,
@@ -882,7 +882,7 @@
 					"\"${PODS_ROOT}/Headers/Public/AVOSCloud\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Smyt/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -914,7 +914,7 @@
 					"\"${PODS_ROOT}/Headers/Public/AVOSCloud\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Smyt/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smytapp.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -47,10 +47,13 @@ class VideoEditViewController: UIViewController, ICGVideoTrimmerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true);
+        navigationController?.interactivePopGestureRecognizer?.enabled = false
         UIApplication.sharedApplication().statusBarStyle = .LightContent;
     }
     
     override func viewWillDisappear(animated: Bool) {
+        navigationController?.interactivePopGestureRecognizer?.enabled = true
+
         super.viewWillDisappear(true);
         UIApplication.sharedApplication().statusBarStyle = .Default;
     }
