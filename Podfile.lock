@@ -43,9 +43,19 @@ DEPENDENCIES:
   - PagingMenuController
   - SDWebImage
   - SwiftSpinner
-  - Toucan
+  - Toucan (from `https://github.com/gavinbunney/Toucan.git`, branch `develop-swift-2.3`)
   - TPKeyboardAvoiding
   - TTTAttributedLabel
+
+EXTERNAL SOURCES:
+  Toucan:
+    :branch: develop-swift-2.3
+    :git: https://github.com/gavinbunney/Toucan.git
+
+CHECKOUT OPTIONS:
+  Toucan:
+    :commit: ae49ac720f7aed13d7a28f852401b0d6529b36d4
+    :git: https://github.com/gavinbunney/Toucan.git
 
 SPEC CHECKSUMS:
   AFDateHelper: aecee6bb264d6531795649f4ebac47783d2bab74
@@ -67,6 +77,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: e5ce146b313de063957bfa75a13f1e9b0ff18ab7
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: 9a0461bee03ca5b595379934525ef465cd4f43b3
+PODFILE CHECKSUM: ef40dae9b92cbafd357b9dca5b23463b164f3024
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2

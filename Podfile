@@ -18,6 +18,6 @@ target 'Smyt' do
   pod 'FontAwesome.swift'
   pod 'CSStickyHeaderFlowLayout'
   pod 'APParallaxHeader'
-  pod 'Toucan'
+  pod 'Toucan', :git => 'https://github.com/gavinbunney/Toucan.git', :branch => 'develop-swift-2.3'
   pod 'SwiftSpinner'
 end
