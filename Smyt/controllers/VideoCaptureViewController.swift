@@ -95,6 +95,7 @@ class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecording
         self.timerLabel.text = timeNow;
         
         session.startRunning()
+        
     }
     @IBAction func closeButtonClicked(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true);
@@ -137,7 +138,6 @@ class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecording
                 }
             }
         }
-        
     }
     
     @IBAction func flipButtonClicked(sender: UIButton) {

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ArI-fm-h5e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ArI-fm-h5e">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="KittenSwash.ttf">
+        <array key="KittenSwash.ttf">
             <string>KittenSwash</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -21,9 +25,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ROU-k9-yMd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -43,10 +47,10 @@
                         <viewControllerLayoutGuide type="bottom" id="XjM-lJ-e7S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ndq-Fo-Yg0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search by username" translatesAutoresizingMaskIntoConstraints="NO" id="wWI-RX-Otj">
+                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search by username" translatesAutoresizingMaskIntoConstraints="NO" id="wWI-RX-Otj">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Aj4-Zh-raH"/>
@@ -56,9 +60,9 @@
                                     <outlet property="delegate" destination="kiF-jp-xfP" id="m8Y-jh-6Po"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="suj-qo-UWe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="suj-qo-UWe">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTableViewCell" rowHeight="201" id="cWe-9M-9dg" customClass="CategoryTableViewCell" customModule="Smyt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="201"/>
@@ -69,17 +73,17 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SIk-WS-wNq">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
-                                                    <color key="backgroundColor" white="0.53582913870000004" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.53582912683486938" green="0.53582912683486938" blue="0.53582912683486938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-0S-fAL">
                                                     <rect key="frame" x="213" y="70" width="174" height="61"/>
                                                     <fontDescription key="fontDescription" name="KittenSwash" family="Kitten Swash" pointSize="40"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="28w-6J-pCb">
                                                     <rect key="frame" x="290" y="90" width="20" height="20"/>
-                                                    <color key="color" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="color" red="0.74497044086456299" green="0.0" blue="0.016273491084575653" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
@@ -93,7 +97,7 @@
                                                 <constraint firstItem="sl1-0S-fAL" firstAttribute="centerX" secondItem="BJw-VD-xPy" secondAttribute="centerX" id="waz-Ko-Nkh"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="backgroundImageView" destination="SIk-WS-wNq" id="Jwo-JJ-2m8"/>
                                             <outlet property="categoryTitleLabel" destination="sl1-0S-fAL" id="DUb-VI-Qe3"/>
@@ -106,12 +110,12 @@
                                     <outlet property="delegate" destination="kiF-jp-xfP" id="nG4-LX-WLZ"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fk6-7w-szP">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fk6-7w-szP">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
-                                <color key="color" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.74497044086456299" green="0.0" blue="0.016273491084575653" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fk6-7w-szP" firstAttribute="centerY" secondItem="ndq-Fo-Yg0" secondAttribute="centerY" id="4EU-zm-zZu"/>
                             <constraint firstItem="fk6-7w-szP" firstAttribute="centerX" secondItem="ndq-Fo-Yg0" secondAttribute="centerX" id="Prb-ii-mXN"/>
@@ -150,7 +154,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="700" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sds-7E-XhY">
                                 <rect key="frame" x="0.0" y="64" width="600" height="936"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoTableViewCell" rowHeight="800" id="ZnH-X5-DHm" customClass="HomeVideoTableViewCell" customModule="Smyt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="800"/>
@@ -161,7 +165,7 @@
                                             <subviews>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pFo-d6-gVP">
                                                     <rect key="frame" x="282" y="349" width="37" height="37"/>
-                                                    <color key="color" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="color" red="0.74497044086456299" green="0.0" blue="0.016273491084575653" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-yX-bAd">
                                                     <rect key="frame" x="0.0" y="668" width="600" height="120"/>
@@ -174,7 +178,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title=" Comments" image="icon-message">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="commentButtonClicked:" destination="ZnH-X5-DHm" eventType="touchUpInside" id="7AF-Dn-Uky"/>
@@ -188,7 +192,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title=" Views" image="icon_share">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="shareButtonClicked:" destination="ZnH-X5-DHm" eventType="touchUpInside" id="Hsl-mY-bnL"/>
@@ -202,7 +206,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title=" likes" image="like-button">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="likeButtonClicked:" destination="ZnH-X5-DHm" eventType="touchUpInside" id="ufV-T7-hZQ"/>
@@ -217,7 +221,7 @@
                                                         </imageView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgQ-J0-0IZ">
                                                             <rect key="frame" x="38" y="34" width="554" height="78"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -231,7 +235,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" image="button-more">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="moreButtonClicked:" destination="ZnH-X5-DHm" eventType="touchUpInside" id="2Px-dU-cyd"/>
@@ -286,7 +290,7 @@
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brenda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiI-jy-lSN">
                                                             <rect key="frame" x="68" y="20" width="55" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHq-93-rwb">
@@ -301,7 +305,7 @@
                                                             <rect key="frame" x="30" y="20" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="kiI-jy-lSN" firstAttribute="leading" secondItem="Peu-oT-nh3" secondAttribute="trailing" constant="8" id="FZk-f1-CXo"/>
                                                         <constraint firstItem="ebH-9K-mYa" firstAttribute="centerY" secondItem="Peu-oT-nh3" secondAttribute="centerY" id="FaB-JK-9OQ"/>
@@ -353,7 +357,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="646.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.28235294119999998" green="0.6588235294" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -365,7 +369,7 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -374,7 +378,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sds-7E-XhY" secondAttribute="trailing" id="80q-2d-Vh6"/>
                             <constraint firstItem="sds-7E-XhY" firstAttribute="leading" secondItem="KGD-MG-v5d" secondAttribute="leading" id="NtD-jh-EpE"/>
@@ -384,7 +388,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Video by Category" id="hcL-5R-CJG">
                         <barButtonItem key="leftBarButtonItem" image="nav_backArrow" id="azO-sk-c5I">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="backButtonClicked:" destination="9oo-4p-RGQ" id="Xeo-bI-1XD"/>
                             </connections>
@@ -427,6 +431,6 @@
         <image name="icon_share" width="22" height="20"/>
         <image name="like-button" width="25" height="24"/>
         <image name="nav_backArrow" width="22" height="22"/>
-        <image name="tab_search_0" width="25" height="25"/>
+        <image name="tab_search_0" width="25" height="24"/>
     </resources>
 </document>
