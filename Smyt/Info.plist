@@ -32,7 +32,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>161117</string>
+	<string>161213</string>
 	<key>FacebookAppID</key>
 	<string>471720453036672</string>
 	<key>FacebookDisplayName</key>
@@ -78,9 +78,11 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>SMYT need to use camera to take videos</string>
+	<string>SMYT needs to use Camera to take videos</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>SMYT needs to use microphone to take videos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>SMYT need to use camera to upload photos</string>
+	<string>SMYT needs to use Photo to take videos</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
