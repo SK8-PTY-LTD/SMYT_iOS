@@ -80,7 +80,6 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
         self.scrollViewDidScroll(self.tableView);
     }
     
-    
     @IBAction func submenuClicked(sender: UIButton?) {
         if (self.isLoadingMoreVideos == true){
             CL.promote("Please wait while loading videos....");
@@ -113,6 +112,8 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
             NSLog("Reloading video, page \(self.currentPage)");
         }
     }
+    
+    var readiedVideos = 0
     
     func reloadVideos() {
         
@@ -197,7 +198,6 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                     NSLog("video array count: \(self.videoArray.count)");
 //                    NSLog("video item array count: \(self.videoItemArray.count)");
                     NSLog("Player array count: \(self.playerArray.count)");
-//                    self.videoItemArray.insert(placeholderItem, atIndex: index);
                     self.playerArray.insert(AVPlayer(playerItem: placeholderItem), atIndex: index);
                     self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic);
                         
@@ -286,9 +286,12 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                                 }
                                 
                                 dispatch_async(dispatch_get_main_queue(), {
-                                    self.isLoadingMoreVideos = false;
-                                    self.refreshControl.endRefreshing();
-                                    self.tableView.bounces = true
+                                    self.readiedVideos += 1
+                                    if self.readiedVideos == downloadArray.count{
+                                        self.isLoadingMoreVideos = false;
+                                        self.refreshControl.endRefreshing();
+                                        self.tableView.bounces = true
+                                    }
                                 })
 
                             });
@@ -618,9 +621,11 @@ class HomeVideoViewController: UIViewController, UITableViewDataSource, UITableV
                 }
             }
         }
-        
-        let cell = self.tableView.cellForRowAtIndexPath(mostVisibleIndexPath) as! HomeVideoTableViewCell;
-        return cell;
+        var cell = self.tableView.cellForRowAtIndexPath(mostVisibleIndexPath) as? HomeVideoTableViewCell
+        if cell == nil{
+            cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: mostVisibleIndexPath.row - 1, inSection: 0)) as! HomeVideoTableViewCell
+        }
+        return cell!;
     }
     
     //Delegate method for HomeVideoTableViewCellProtocol
