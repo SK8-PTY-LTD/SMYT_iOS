@@ -37,8 +37,14 @@ class VideoCaptureViewController: UIViewController, AVCaptureFileOutputRecording
         startStreamLiveCanmera();
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.interactivePopGestureRecognizer?.enabled = false
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true);
+        navigationController?.interactivePopGestureRecognizer?.enabled = true
         UIApplication.sharedApplication().statusBarStyle = .Default;
     }
     
